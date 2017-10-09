@@ -13,8 +13,9 @@ from django.core.wsgi import get_wsgi_application
 import os
 import sys
 from whitenoise.django import DjangoWhiteNoise
+#whitenoise is following treehouse for PA
 
-path = "/home/bezp/django_tut/mysite"
+path = "/home/bezport/django_tut/mysite"
 if path not in sys.path:
     sys.path.append(path)
 

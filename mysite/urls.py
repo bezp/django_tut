@@ -17,8 +17,11 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include, url
 from django.contrib import admin
+from . import view
+
 
 urlpatterns = [
+    url(r'^$', view.index, name='index'),  #made homepage for naked url... need to change on PA
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
 ]
