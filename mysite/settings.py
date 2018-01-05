@@ -25,7 +25,7 @@ SECRET_KEY = 'i!7o6++-#pc0tl*z_!q23e9bd%i=+az_-s**5%7v5^^d@_kn=s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'bezport.pythonanywhere.com']
 
 
 # Application definition
