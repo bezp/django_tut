@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'courses.apps.CoursesConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,3 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets'), #added so layout.html can load static files... 'BASE_DIR - is just the
+                                        #'mysite' base root stub and u need comma b/c its a tuple
+)

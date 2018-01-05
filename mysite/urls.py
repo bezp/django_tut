@@ -18,10 +18,21 @@ from django.contrib import admin
 from django.conf.urls import include, url
 from django.contrib import admin
 from . import view
+from . import views #this is for courses app
+from django.conf.urls import include, url
+from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 
 urlpatterns = [
-    url(r'^$', view.index, name='index'),  #made homepage for naked url... need to change on PA
+    #url(r'^$', view.index, name='index'),  #made homepage for naked url... need to change on PA
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
+
+    url(r'^courses/', include('courses.urls')),
+    url(r'^course_admin/', include(admin.site.urls)), #added course_ to url route
+    url(r'^$', views.hello_world),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
