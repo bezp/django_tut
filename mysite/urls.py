@@ -13,11 +13,6 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
-from django.contrib import admin
-from django.conf.urls import include, url
-from django.contrib import admin
-from . import view
 from . import views #this is for courses app
 from django.conf.urls import include, url
 from django.contrib import admin
@@ -26,12 +21,11 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
-    #url(r'^$', view.index, name='index'),  #made homepage for naked url... need to change on PA
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
-
+    url(r'^udacity/', include('udacity.urls')),
     url(r'^courses/', include('courses.urls')),
-    url(r'^course_admin/', include(admin.site.urls)), #added course_ to url route
+    #url(r'^course_admin/', include(admin.site.urls)), #added course_ to url route # removed cause only 1 admind and u just need to register the app
     url(r'^$', views.hello_world),
 ]
 

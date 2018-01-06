@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>/ascii/</title>
+    </head>
+
+    <body>
+    <h1>/asccccc/</h1>
+
+    <form method="post">
+        <label>
+            <div>title</div>
+            <input type="text" name="title">
+        </label>
+
+        <label>
+            <div>art</div>
+            <textarea name="art"></textarea>
+        </label>
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit">
+    </form>
+
+
+    {% for x in xtry %}
+
+    {{ x.art }}
+
+    {% endfor %}
+    </body>
+
+</html>
+
+

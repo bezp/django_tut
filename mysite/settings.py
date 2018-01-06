@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'bezport.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'udacity.apps.UdacityConfig',
     'courses.apps.CoursesConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
