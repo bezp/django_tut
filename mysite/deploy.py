@@ -15,6 +15,7 @@ import sys
 from whitenoise.django import DjangoWhiteNoise
 #whitenoise is following treehouse for PA
 
+
 path = "/home/bezport/django_tut/mysite"
 if path not in sys.path:
     sys.path.append(path)
