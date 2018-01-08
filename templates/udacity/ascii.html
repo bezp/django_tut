@@ -2,14 +2,14 @@
 
 <html>
     <head>
-        <title>/ascii/</title>
+        <title>BEEP BOOP BOOP</title>
     </head>
 
     <body>
-    <h1>/asccccc/</h1>
+    <h1>WHERE U AT BOI</h1>
 
     <form method="post">
-        <label>
+<!--        <label>
             <div>title</div>
             <input type="text" name="title">
         </label>
@@ -17,17 +17,22 @@
         <label>
             <div>art</div>
             <textarea name="art"></textarea>
-        </label>
+        </label>-->
     {{ form.as_p }}
     {% csrf_token %}
     <input type="submit">
     </form>
 
 
+
+
+    {% if a %}
+    <img src="{{ a }}">
+    {% endif %}
+
+
     {% for x in xtry %}
-
-    {{ x.art }}
-
+    <p>{{ x.art }}</p>
     {% endfor %}
     </body>
 

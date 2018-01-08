@@ -7,4 +7,8 @@ class AsciiForm(forms.ModelForm):
 
     class Meta:
         model = Art
-        fields = '__all__'
+        fields = ['title', 'art'] #'__all__'
+        labels = {
+            'title': 'Yo name',
+            'art': 'where u think u from'
+        }
