@@ -1,0 +1,58 @@
+
+
+
+h1,
+h2,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p:first-child,
+p:last-child { /* to remove whitespace around the 2 div pcs */
+    margin: 0;
+    padding: 0;
+}
+
+
+#id_title {
+    float: right;
+    width: 500px;
+}
+#id_art {
+    float: right;
+    width: 500px;
+    opacity: 0.5;
+}
+
+p.p-name {
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+p.p-message {
+    color: blue;
+    margin: 0;
+    padding: 0;
+}
+
+/*.blocktd {
+    display: block;
+}
+.scrollable {
+    overflow-y: scroll;
+    height: 200px;
+    display:block;
+    border:1px solid red;
+}*/
+
+
+.background1 {
+    background: white url("images/blank_map.gif");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+p {
+    color: green;
+}

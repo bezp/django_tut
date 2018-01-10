@@ -2,13 +2,16 @@ from django import forms
 from .models import Art
 
 
-
 class AsciiForm(forms.ModelForm):
 
     class Meta:
         model = Art
         fields = ['title', 'art'] #'__all__'
         labels = {
-            'title': 'Yo name',
-            'art': 'where u think u from'
+            'title': 'Alias from da wae',
+            'art': 'Message for da wae',
+        }
+        help_texts = {
+            'title': ('Some useful help text.'),
+            'art': ('Message you want to send to the masses'),
         }
