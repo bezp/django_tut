@@ -10,6 +10,7 @@ import urllib3
 from xml.dom import minidom
 from collections import namedtuple
 # Create your views here.
+import certifi
 
 
 # funct to get coords of ppl submitting... hav an example ip  -- results in lat and lon
@@ -20,7 +21,9 @@ def get_coords(ip):
     url = IP_URL + ip
     content = None  #start with nothing
     try:
-        http = urllib3.PoolManager()
+        http = urllib3.PoolManager(
+                                        cert_reqs='CERT_REQUIRED',
+                                        ca_certs=certifi.where())
         r = http.request('GET', url)
         content = r.data
     except urllib3.exceptions.HTTPError:
@@ -31,6 +34,8 @@ def get_coords(ip):
         if coords and coords[0].childNodes[0].nodeValue:
             lon, lat = coords[0].childNodes[0].nodeValue.split(',')
             return lat, lon
+
+
 
 
 coord_points = []

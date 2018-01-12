@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 
 def hello_world(request):
-    return render(request, 'courses/home.html')
+    return render(request, 'main_page.html')
