@@ -13,12 +13,20 @@
     <input type="submit">
 </form>
 <p></p>
-{% if error %}
-{{ error }}
-{% else %}
-{{ species }}
-{% endif %}
+{% if others %}
 
+{% for x in others %}
+<p>{{ x }}</p>
+{% endfor %}
+
+{% else %}
+{{ error }}
+{% endif %}
+<p></p>
+
+    {% if link %}
+    <li>{{link}}</li>
+    {% endif %}
 <div>
     {% for x in link %}
     <p>name---{{ x.name }}</p>

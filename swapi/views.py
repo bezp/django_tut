@@ -68,13 +68,15 @@ def url_convert(string): #convert '+' to a ' 'space, etc... for url values
 
 def xurl(request):
     r = request.META.get('QUERY_STRING') #get the value of what they submit...'people=luke'
-    r = r[7:].lower()
-    s = url_convert(r)
+    s = url_convert(r[7:].lower())
+    if s:
+        s = s[0].capitalize() + s[1:]
     result = []
     for tup in li_species:
-        if s.title() in tup[0] and s != '':
-            result.append(tup[1]) #returns the number part of tuple
-    return render(request, 'swapi/xurl.html', {'r':result})
+        if s in tup[0] and s != '':
+            result.append(tup[0])
+    error = 'Please enter a VALID query'
+    return render(request, 'swapi/xurl.html', {'r':result, 'error':error})
 
 
 def main(request):
@@ -112,26 +114,31 @@ def planets(request):
 
 def species(request):
     r = request.META.get('QUERY_STRING')
-    r = r[8:].lower()
-    error = None
+    s = url_convert(r[8:].lower())
+    if s:
+        s = s[0].capitalize() + s[1:]
+    error = 'Please enter a VALID query'
     first_item = None
-    try:
-        if not all(x.isalpha() or x == '\'' or x == ' ' for x in r):
-            error = 'Please enter a VALID query using the english alphabet'
-    except IndexError:
-        pass
-    s = url_convert(r)
-    result = []
+    other_choices = []
+
+    # # try:
+    # #     if not all(x.isalpha() or x == '\'' or x == ' ' for x in s):
+    # #         error = 'Please enter a VALID query'
+    # # except IndexError:
+    # #     pass
+    result = [] #list of numbers
     for tup in li_species:
-        if s.title() in tup[0] and s != '':  #need s!='' b/c w/o it givs eveything
+        if s in tup[0] and s != '':  #need s!='' b/c w/o it givs eveything
             result.append(tup[1])
+
     content = []
     for num in result:
         detail_url = get_url_specific(3, num)
         content.append(detail_url)
     if content:
         first_item = [content[0]] #list of dict
-    return render(request, 'swapi/species.html', {'species': result, 'error': error, 'link': first_item})
+        other_choices = [c['name'] for c in content]
+    return render(request, 'swapi/species.html', {'others': other_choices, 'error': error, 'link': first_item})
 
 def starships(request):
     x = get_url(4)
