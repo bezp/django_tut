@@ -41,28 +41,13 @@ def search(request, tuple_list, num):
     result = []
     for tup in tuple_list:
         if s.lower() in tup[0].lower() and s != '':
-            result.append(tup[0])
+            result.append(tup)
     return result
 
 error = 'Please enter a VALID query'
 def xurl(request):
     result = search(request, li_people, 7)
     return render(request, 'swapi/xurl.html', {'r':result, 'error':error})
-
-
-
-
-# def xurl(request):
-#     r = request.META.get('QUERY_STRING') #get the value of what they submit...'people=luke'
-#     s = url_convert(r[7:].lower())
-#     if s:
-#         s = s[0].capitalize() + s[1:]
-#     result = []
-#     for tup in li_species:
-#         if s in tup[0] and s != '':
-#             result.append(tup[0])
-#     error = 'Please enter a VALID query'
-#     return render(request, 'swapi/xurl.html', {'r':result, 'error':error})
 
 
 def main(request):
@@ -97,25 +82,17 @@ li_people = [('Luke Skywalker', 1), ('C-3PO', 2), ('R2-D2', 3), ('Darth Vader', 
              ('Raymus Antilles', 81), ('Sly Moore', 82), ('Tion Medon', 83), ('Finn', 84), ('Rey', 85),
              ('Poe Dameron', 86), ('BB8', 87)]
 def people(request):
-    r = request.META.get('QUERY_STRING')
-    s = url_convert(r[7:].lower())
-    if s:
-        s = s[0].capitalize() + s[1:]
-    error = 'Please enter a VALID query'
-    first_item = None
-    other_choices = []
-    result = []  # list of numbers
-    for tup in li_people:
-        if s in tup[0] and s != '':  # need s!='' b/c w/o it givs eveything
-            result.append(tup[1])
-    content = []
-    for num in result:
-        detail_url = get_url_specific(1, num)
-        content.append(detail_url)
-    if content:
-        first_item = [content[0]]  # list of dict
-        other_choices = [c['name'] for c in content]
-    return render(request, 'swapi/people.html', {'people': first_item, 'others': other_choices, 'error': error})
+    result = search(request, li_people, 7) #[('BB8', 87)]
+    content = None
+    if result:
+        first_item = result.pop(0)
+    else:
+        first_item = None
+    try:
+        content = get_url_specific(1, first_item[1])
+    except TypeError:
+        pass
+    return render(request, 'swapi/people.html', {'first': content, 'others': result, 'error': error})
 
 
 li_planets = [('Tatooine', 1), ('Alderaan', 2), ('Yavin IV', 3), ('Hoth', 4), ('Dagobah', 5), ('Bespin', 6),
