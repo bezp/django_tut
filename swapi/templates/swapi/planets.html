@@ -1,0 +1,19 @@
+{% extends "swapi/header_template.html" %}
+
+{% block title %}Planets{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+{% for x in planets %}
+<p>{{ x }}</p>
+
+
+
+{% endfor %}
+
+{% endblock %}

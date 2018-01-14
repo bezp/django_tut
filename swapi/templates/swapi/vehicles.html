@@ -1,0 +1,19 @@
+{% extends "swapi/header_template.html" %}
+
+{% block title %}Vehicles{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+{% for x in vehicles %}
+<p>{{ x }}</p>
+
+
+
+{% endfor %}
+
+{% endblock %}

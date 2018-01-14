@@ -1,0 +1,21 @@
+
+
+
+
+
+
+
+
+<form action="{% url 'swapi:xurl' %}">
+    <input name="people">
+    <input type="submit">
+</form>
+{% if error %}
+{{ error }}
+{% else %}
+{{ r }}
+{% endif %}
+
+<p>
+    {{ r }}
+</p>

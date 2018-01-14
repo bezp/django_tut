@@ -1,0 +1,53 @@
+{% extends "swapi/header_template.html" %}
+
+{% block title %}Species{% endblock %}
+
+
+
+
+
+
+{% block content %}(Example)
+<form action="{% url 'swapi:species' %}">
+    <input name="species" value="Twi'lek">
+    <input type="submit">
+</form>
+<p></p>
+{% if error %}
+{{ error }}
+{% else %}
+{{ species }}
+{% endif %}
+
+<div>
+    {% for x in link %}
+    <p>name---{{ x.name }}</p>
+    <p>classification---{{ x.classification }}</p>
+    <p>designation---{{ x.designation }}</p>
+    <p>average_height---{{ x.average_height }}</p>
+    <p>skin_colors---{{ x.skin_colors }}</p>
+    <p>hair_colors---{{ x.hair_colors }}</p>
+    <p>eye_colors---{{ x.eye_colors }}</p>
+    <p>average_lifespan---{{ x.average_lifespan }}</p>
+    <p>language---{{ x.language }}</p>
+
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}
+
+
+<p>{{ link }}</p>
+
+{% for detail in link %}
+<p>{{ detail }}</p>{% endfor %}
+
+
+<div> passing in dict
+{% for x, y in link.items %}
+<li>{{ x }}</li>
+<p>---{{ y }}</p>
+{% endfor %}
+</div>

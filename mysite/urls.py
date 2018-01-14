@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^udacity/', include('udacity.urls')),
     url(r'^courses/', include('courses.urls')),
+    url(r'^swapi/', include('swapi.urls')),
     #url(r'^course_admin/', include(admin.site.urls)), #added course_ to url route # removed cause only 1 admind and u just need to register the app
     url(r'^$', views.hello_world),
 ]
