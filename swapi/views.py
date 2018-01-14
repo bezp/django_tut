@@ -27,35 +27,55 @@ def get_url_specific(value, number=None):
         x = json.loads(content)
         return x
 
+
 def url_convert(string): #convert '+' to a ' 'space, etc... for url values
     edit = string
     edit = edit.replace('+', ' ')
     edit = edit.replace('%27', "'")
-
+    # edit = edit.replace('%2D', "-")
     return edit
 
-def xurl(request):
-    r = request.META.get('QUERY_STRING') #get the value of what they submit...'people=luke'
-    s = url_convert(r[7:].lower())
-    if s:
-        s = s[0].capitalize() + s[1:]
+def search(request, tuple_list, num):
+    r = request.META.get('QUERY_STRING')
+    s = url_convert(r[num:])
     result = []
-    for tup in li_species:
-        if s in tup[0] and s != '':
+    for tup in tuple_list:
+        if s.lower() in tup[0].lower() and s != '':
             result.append(tup[0])
-    error = 'Please enter a VALID query'
+    return result
+
+error = 'Please enter a VALID query'
+def xurl(request):
+    result = search(request, li_people, 7)
     return render(request, 'swapi/xurl.html', {'r':result, 'error':error})
+
+
+
+
+# def xurl(request):
+#     r = request.META.get('QUERY_STRING') #get the value of what they submit...'people=luke'
+#     s = url_convert(r[7:].lower())
+#     if s:
+#         s = s[0].capitalize() + s[1:]
+#     result = []
+#     for tup in li_species:
+#         if s in tup[0] and s != '':
+#             result.append(tup[0])
+#     error = 'Please enter a VALID query'
+#     return render(request, 'swapi/xurl.html', {'r':result, 'error':error})
 
 
 def main(request):
     x = get_url_specific(6)
     return render(request, 'swapi/main.html', {'main': x})
 
+
 def films(request):
     x = get_url_specific(0)
     x = x['results']
     ordered_list = sorted(x, key=lambda k: k['episode_id'])
     return render(request, 'swapi/films.html', {'films': ordered_list}) #films sent is a list of dict
+
 
 li_people = [('Luke Skywalker', 1), ('C-3PO', 2), ('R2-D2', 3), ('Darth Vader', 4), ('Leia Organa', 5),
              ('Owen Lars', 6), ('Beru Whitesun lars', 7), ('R5-D4', 8), ('Biggs Darklighter', 9),
@@ -77,18 +97,26 @@ li_people = [('Luke Skywalker', 1), ('C-3PO', 2), ('R2-D2', 3), ('Darth Vader', 
              ('Raymus Antilles', 81), ('Sly Moore', 82), ('Tion Medon', 83), ('Finn', 84), ('Rey', 85),
              ('Poe Dameron', 86), ('BB8', 87)]
 def people(request):
-    li_dict = []
-    amount = list(range(1,2))
+    r = request.META.get('QUERY_STRING')
+    s = url_convert(r[7:].lower())
+    if s:
+        s = s[0].capitalize() + s[1:]
+    error = 'Please enter a VALID query'
+    first_item = None
+    other_choices = []
+    result = []  # list of numbers
+    for tup in li_people:
+        if s in tup[0] and s != '':  # need s!='' b/c w/o it givs eveything
+            result.append(tup[1])
+    content = []
+    for num in result:
+        detail_url = get_url_specific(1, num)
+        content.append(detail_url)
+    if content:
+        first_item = [content[0]]  # list of dict
+        other_choices = [c['name'] for c in content]
+    return render(request, 'swapi/people.html', {'people': first_item, 'others': other_choices, 'error': error})
 
-    for num in amount:
-        try:
-            x = get_url_specific(1, num)
-            li_dict.append((x['name'], num))
-        except KeyError:
-            continue
-    # x = x['results']
-    # name_list = sorted(x, key=lambda k: k['name'])
-    return render(request, 'swapi/people.html', {'people': li_dict})
 
 li_planets = [('Tatooine', 1), ('Alderaan', 2), ('Yavin IV', 3), ('Hoth', 4), ('Dagobah', 5), ('Bespin', 6),
               ('Endor', 7), ('Naboo', 8), ('Coruscant', 9), ('Kamino', 10), ('Geonosis', 11), ('Utapau', 12),
@@ -137,6 +165,8 @@ def species(request):
         first_item = [content[0]] #list of dict
         other_choices = [c['name'] for c in content]
     return render(request, 'swapi/species.html', {'others': other_choices, 'error': error, 'link': first_item})
+
+
 li_starships = [('CR90 corvette', 2), ('Star Destroyer', 3), ('Sentinel-class landing craft', 5), ('Death Star', 9),
                 ('Millennium Falcon', 10), ('Y-wing', 11), ('X-wing', 12), ('TIE Advanced x1', 13), ('Executor', 15),
                 ('Rebel transport', 17), ('Slave 1', 21), ('Imperial shuttle', 22),
@@ -153,6 +183,7 @@ def starships(request):
             continue
     # x = x['results']
     return render(request, 'swapi/starships.html', {'starships': li_dict})
+
 
 li_vehicles = [('Sand Crawler', 4), ('T-16 skyhopper', 6), ('X-34 landspeeder', 7), ('TIE/LN starfighter', 8),
                ('Snowspeeder', 14), ('TIE bomber', 16), ('AT-AT', 18), ('AT-ST', 19),
