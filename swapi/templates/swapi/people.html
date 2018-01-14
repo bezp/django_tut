@@ -2,88 +2,39 @@
 
 {% block title %}People{% endblock %}
 
-
-
-
-
-
 {% block content %}
+
 Example (Obi-Wan Kenobi)
 <form action="{% url 'swapi:people' %}">
     <input name="people" value="">
     <input type="submit">
 </form>
+
+
 {% if others %}
-{% for x in others %}
-{{ x.0 }}---
-{% endfor %}
+    {% for x in others %}
+        {{ x.0 }}---
+    {% endfor %}
 {% endif %}
 
 
 {% if first %}
-<p>name---{{ first.name }}</p>
-<p>height---{{ first.height }}</p>
-<p>mass---{{ first.mass }}</p>
-<p>hair_color---{{ first.hair_color }}</p>
-<p>skin_color---{{ first.skin_color }}</p>
-<p>eye_color---{{ first.eye_color }}</p>
-<p>birth_year---{{ first.birth_year }}</p>
-<p>gender---{{ first.gender }}</p>
+    <p>name---{{ first.name }}</p>
+    <p>height---{{ first.height }}</p>
+    <p>mass---{{ first.mass }}</p>
+    <p>hair_color---{{ first.hair_color }}</p>
+    <p>skin_color---{{ first.skin_color }}</p>
+    <p>eye_color---{{ first.eye_color }}</p>
+    <p>birth_year---{{ first.birth_year }}</p>
+    <p>gender---{{ first.gender }}</p>
 {% else %}
-{{ error }}
+    {{ error }}
 {% endif %}
+
+
+
 {% endblock %}
 
 
-
-
-
-<p></p>
-{% if others %}
-
-{% for x in others %}
-<p>{{ x }}</p>
-{% endfor %}
-
-{% else %}
-{{ error }}
-{% endif %}
-<p></p>
-
-{% if people %}
-    <li>{{ people }}</li>
-    {% endif %}
-<div>
-    {% for x in people %}
-    <p></p>
-    <p>height---{{ x.height }}</p>
-    <p>mass---{{ x.mass }}</p>
-    <p>hair_color---{{ x.hair_color }}</p>
-    <p>skin_color---{{ x.skin_color }}</p>
-    <p>eye_color---{{ x.eye_color }}</p>
-    <p>birth_year---{{ x.birth_year }}</p>
-    <p>gender---{{ x.gender }}</p>
-
-    {% endfor %}
-
-</div>
-
-
-
-
-
-
-
-<!--
-{
-    "name": "Luke Skywalker",
-    "height": "172",
-    "mass": "77",
-    "hair_color": "blond",
-    "skin_color": "fair",
-    "eye_color": "blue",
-    "birth_year": "19BBY",
-    "gender": "male",
-    -->
 
 

@@ -84,10 +84,9 @@ li_people = [('Luke Skywalker', 1), ('C-3PO', 2), ('R2-D2', 3), ('Darth Vader', 
 def people(request):
     result = search(request, li_people, 7) #[('BB8', 87)]
     content = None
+    first_item = None
     if result:
         first_item = result.pop(0)
-    else:
-        first_item = None
     try:
         content = get_url_specific(1, first_item[1])
     except TypeError:
