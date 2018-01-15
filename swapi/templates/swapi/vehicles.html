@@ -2,21 +2,42 @@
 
 {% block title %}Vehicles{% endblock %}
 
-
-
-
-
-
 {% block content %}
 
-{{vehicles}}
+Example (AT-AT)
+<form action="{% url 'swapi:vehicles' %}">
+    <input name="vehicles" value="">
+    <input type="submit">
+</form>
+
+
+{% if others %}
+    {% for x in others %}
+        {{ x.0 }}---
+    {% endfor %}
+{% endif %}
+
+
+{% if first %}
+    <p>name---{{ first.name }}</p>
+    <p>model---{{ first.model }}</p>
+    <p>manufacturer---{{ first.manufacturer }}</p>
+    <p>cost_in_credits---{{ first.cost_in_credits }}</p>
+    <p>length---{{ first.length }}</p>
+    <p>max_atmosphering_speed---{{ first.max_atmosphering_speed }}</p>
+    <p>crew---{{ first.crew }}</p>
+    <p>passengers---{{ first.passengers }}</p>
+    <p>cargo_capacity---{{ first.cargo_capacity }}</p>
+    <p>consumables---{{ first.consumables }}</p>
+    <p>vehicle_class---{{ first.vehicle_class }}</p>
+{% else %}
+    {{ error }}
+{% endif %}
+
+
 
 {% endblock %}
 
 
-{% for x in vehicles %}
-<p>{{ x }}</p>
 
 
-
-{% endfor %}

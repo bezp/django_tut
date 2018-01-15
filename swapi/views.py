@@ -14,7 +14,6 @@ def get_url_specific(value, number=None):
     url = urls[value]
     if number:
         url += str(number)
-    content = None
     try:
         http = urllib3.PoolManager(
             cert_reqs='CERT_REQUIRED',
@@ -35,6 +34,7 @@ def url_convert(string): #convert '+' to a ' 'space, etc... for url values
     # edit = edit.replace('%2D', "-")
     return edit
 
+
 def search(request, tuple_list, num):
     r = request.META.get('QUERY_STRING')
     s = url_convert(r[num:])
@@ -44,15 +44,16 @@ def search(request, tuple_list, num):
             result.append(tup)
     return result
 
-error = 'Please enter a VALID query'
+
 def xurl(request):
     result = search(request, li_people, 7)
     return render(request, 'swapi/xurl.html', {'r':result, 'error':error})
 
 
 def main(request):
-    x = get_url_specific(6)
-    return render(request, 'swapi/main.html', {'main': x})
+    return render(request, 'swapi/main.html')
+    # x = get_url_specific(6)
+    # return render(request, 'swapi/main.html', {'main': x})
 
 
 def films(request):
@@ -61,7 +62,7 @@ def films(request):
     ordered_list = sorted(x, key=lambda k: k['episode_id'])
     return render(request, 'swapi/films.html', {'films': ordered_list}) #films sent is a list of dict
 
-
+error = 'Please enter a VALID query'
 li_people = [('Luke Skywalker', 1), ('C-3PO', 2), ('R2-D2', 3), ('Darth Vader', 4), ('Leia Organa', 5),
              ('Owen Lars', 6), ('Beru Whitesun lars', 7), ('R5-D4', 8), ('Biggs Darklighter', 9),
              ('Obi-Wan Kenobi', 10), ('Anakin Skywalker', 11), ('Wilhuff Tarkin', 12), ('Chewbacca', 13),
@@ -107,11 +108,16 @@ li_planets = [('Tatooine', 1), ('Alderaan', 2), ('Yavin IV', 3), ('Hoth', 4), ('
               ('Concord Dawn', 53), ('Zolan', 54), ('Ojom', 55), ('Skako', 56), ('Muunilinst', 57), ('Shili', 58),
               ('Kalee', 59), ('Umbara', 60), ('Jakku', 61)]
 def planets(request):
-
-    # x = get_url(2)
-    # x = x['results']
-    return render(request, 'swapi/planets.html', {'planets': li_dict})
-
+    result = search(request, li_planets, 8)
+    content = None
+    first_item = None
+    if result:
+        first_item = result.pop(0)
+    try:
+        content = get_url_specific(2, first_item[1])
+    except TypeError:
+        pass
+    return render(request, 'swapi/planets.html', {'first': content, 'others': result, 'error': error})
 
 
 li_species = [('Human', 1), ('Droid', 2), ('Wookiee', 3), ('Rodian', 4), ('Hutt', 5), ("Yoda's species", 6),
@@ -122,25 +128,16 @@ li_species = [('Human', 1), ('Droid', 2), ('Wookiee', 3), ('Rodian', 4), ('Hutt'
              ('Mirialan', 29), ('Clawdite', 30), ('Besalisk', 31), ('Kaminoan', 32), ('Skakoan', 33), ('Muun', 34),
              ('Togruta', 35), ('Kaleesh', 36), ("Pau'an", 37)]
 def species(request):
-    r = request.META.get('QUERY_STRING')
-    s = url_convert(r[8:].lower())
-    if s:
-        s = s[0].capitalize() + s[1:]
-    error = 'Please enter a VALID query'
+    result = search(request, li_species, 8)
+    content = None
     first_item = None
-    other_choices = []
-    result = [] #list of numbers
-    for tup in li_species:
-        if s in tup[0] and s != '':  #need s!='' b/c w/o it givs eveything
-            result.append(tup[1])
-    content = []
-    for num in result:
-        detail_url = get_url_specific(3, num)
-        content.append(detail_url)
-    if content:
-        first_item = [content[0]] #list of dict
-        other_choices = [c['name'] for c in content]
-    return render(request, 'swapi/species.html', {'others': other_choices, 'error': error, 'link': first_item})
+    if result:
+        first_item = result.pop(0)
+    try:
+        content = get_url_specific(3, first_item[1])
+    except TypeError:
+        pass
+    return render(request, 'swapi/species.html', {'first': content, 'others': result, 'error': error})
 
 
 li_starships = [('CR90 corvette', 2), ('Star Destroyer', 3), ('Sentinel-class landing craft', 5), ('Death Star', 9),
@@ -149,16 +146,16 @@ li_starships = [('CR90 corvette', 2), ('Star Destroyer', 3), ('Sentinel-class la
                 ('EF76 Nebulon-B escort frigate', 23), ('Calamari Cruiser', 27), ('A-wing', 28), ('B-wing', 29),
                 ('Republic Cruiser', 31), ('Droid control ship', 32), ('Naboo fighter', 39)]
 def starships(request):
-    li_dict = []
-    amount = list(range(1,2))
-    for num in amount:
-        try:
-            x = get_url_specific(4, num)
-            li_dict.append((x['name'], num))
-        except KeyError:
-            continue
-    # x = x['results']
-    return render(request, 'swapi/starships.html', {'starships': li_dict})
+    result = search(request, li_starships, 10)
+    content = None
+    first_item = None
+    if result:
+        first_item = result.pop(0)
+    try:
+        content = get_url_specific(4, first_item[1])
+    except TypeError:
+        pass
+    return render(request, 'swapi/starships.html', {'first': content, 'others': result, 'error': error})
 
 
 li_vehicles = [('Sand Crawler', 4), ('T-16 skyhopper', 6), ('X-34 landspeeder', 7), ('TIE/LN starfighter', 8),
@@ -168,18 +165,16 @@ li_vehicles = [('Sand Crawler', 4), ('T-16 skyhopper', 6), ('X-34 landspeeder', 
                ('Multi-Troop Transport', 34), ('Armored Assault Tank', 35), ('Single Trooper Aerial Platform', 36),
                ('C-9979 landing craft', 37), ('Tribubble bongo', 38)]
 def vehicles(request):
-
-    x = get_url_specific(5)
-    x = x['results']
-    return render(request, 'swapi/vehicles.html', {'vehicles': x})
-
-
-
-
-
-
-
-
+    result = search(request, li_vehicles, 9)
+    content = None
+    first_item = None
+    if result:
+        first_item = result.pop(0)
+    try:
+        content = get_url_specific(5, first_item[1])
+    except TypeError:
+        pass
+    return render(request, 'swapi/vehicles.html', {'first': content, 'others': result, 'error': error})
 
 
 

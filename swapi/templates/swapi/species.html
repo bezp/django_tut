@@ -2,60 +2,35 @@
 
 {% block title %}Species{% endblock %}
 
+{% block content %}
 
-
-
-
-
-{% block content %}(Example)
+Example (Twi'lek)
 <form action="{% url 'swapi:species' %}">
-    <input name="species" value="Twi'lek">
+    <input name="species" value="">
     <input type="submit">
 </form>
-<p></p>
+
+
 {% if others %}
-
-{% for x in others %}
-<p>{{ x }}</p>
-{% endfor %}
-
-{% else %}
-{{ error }}
-{% endif %}
-<p></p>
-
-    {% if link %}
-    <li>{{link}}</li>
-    {% endif %}
-<div>
-    {% for x in link %}
-    <p>name---{{ x.name }}</p>
-    <p>classification---{{ x.classification }}</p>
-    <p>designation---{{ x.designation }}</p>
-    <p>average_height---{{ x.average_height }}</p>
-    <p>skin_colors---{{ x.skin_colors }}</p>
-    <p>hair_colors---{{ x.hair_colors }}</p>
-    <p>eye_colors---{{ x.eye_colors }}</p>
-    <p>average_lifespan---{{ x.average_lifespan }}</p>
-    <p>language---{{ x.language }}</p>
-
+    {% for x in others %}
+        {{ x.0 }}---
     {% endfor %}
+{% endif %}
 
-</div>
+
+{% if first %}
+    <p>name---{{ first.name }}</p>
+    <p>classification---{{ first.classification }}</p>
+    <p>designation---{{ first.designation }}</p>
+    <p>average_height---{{ first.average_height }}</p>
+    <p>skin_colors---{{ first.skin_colors }}</p>
+    <p>hair_colors---{{ first.hair_colors }}</p>
+    <p>eye_colors---{{ first.eye_colors }}</p>
+    <p>average_lifespan---{{ first.average_lifespan }}</p>
+    <p>language---{{ first.language }}</p>
+{% else %}
+    {{ error }}
+{% endif %}
 
 
 {% endblock %}
-
-
-<p>{{ link }}</p>
-
-{% for detail in link %}
-<p>{{ detail }}</p>{% endfor %}
-
-
-<div> passing in dict
-{% for x, y in link.items %}
-<li>{{ x }}</li>
-<p>---{{ y }}</p>
-{% endfor %}
-</div>

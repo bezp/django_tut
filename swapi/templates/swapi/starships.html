@@ -2,23 +2,44 @@
 
 {% block title %}Starships{% endblock %}
 
-
-
-
-
-
 {% block content %}
 
-{{starships}}
+Example (Death Star)
+<form action="{% url 'swapi:starships' %}">
+    <input name="starships" value="">
+    <input type="submit">
+</form>
+
+
+{% if others %}
+    {% for x in others %}
+        {{ x.0 }}---
+    {% endfor %}
+{% endif %}
+
+
+{% if first %}
+    <p>name---{{ first.name }}</p>
+    <p>model---{{ first.model }}</p>
+    <p>manufacturer---{{ first.manufacturer }}</p>
+    <p>cost_in_credits---{{ first.cost_in_credits }}</p>
+    <p>length---{{ first.length }}</p>
+    <p>max_atmosphering_speed---{{ first.max_atmosphering_speed }}</p>
+    <p>crew---{{ first.crew }}</p>
+    <p>passengers---{{ first.passengers }}</p>
+    <p>cargo_capacity---{{ first.cargo_capacity }}</p>
+    <p>consumables---{{ first.consumables }}</p>
+    <p>hyperdrive_rating---{{ first.hyperdrive_rating }}</p>
+    <p>MGLT---{{ first.MGLT }}</p>
+    <p>starship_class---{{ first.starship_class }}</p>
+{% else %}
+    {{ error }}
+{% endif %}
+
+
 
 {% endblock %}
 
 
 
 
-{% for x in starships %}
-<p>{{ x }}</p>
-
-
-
-{% endfor %}

@@ -1,9 +1,25 @@
-{{ main }}
 
-<title>Home</title>
-<p>x</p><p>x</p><p>x</p>
-{% for choice, key in main.items %}
-    <li>{{ choice }}  </li><li>{{ key }}</li>
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>StarWars API</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'swapi/main.css' %}" />
+    </head>
+    <body>
+        <ul>
+            <li><a href="{% url 'swapi:films' %}">Films</a></li>
+            <li><a href="{% url 'swapi:people' %}">People</a></li>
+            <li><a href="{% url 'swapi:planets' %}">Planets</a></li>
+            <li><a href="{% url 'swapi:species' %}">Species</a></li>
+            <li><a href="{% url 'swapi:starships' %}">Starships</a></li>
+            <li><a href="{% url 'swapi:vehicles' %}">Vehicles</a></li>
+        </ul>
 
-    <p>x</p>
-{% endfor %}
+
+    </body>
+</html>
+
+
+
+
