@@ -1,6 +1,64 @@
 
 
-li {
-    float: right;
+a {
+    text-align: center;
+}
+a:link {
+    color: hotpink;
+}
+
+a:visited {
+    color: green;
+}
+a:hover {
+    color: red;
+}
+
+html, body { height: 100%; padding: 0; margin: 0; }
+div { width: 33.33%; height: 50%; float: left; }
+#div1 {
+    background-image: url("images/star_wars_film4.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ }
+#div2 {
+    background-image: url("images/SW_chewbacca.jpg");
+    background-repeat: no-repeat;
+    background-position: ;
+    background-size: cover;
+ }
+#div3 {
+    background-image: url("images/SW_alderaan.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ }
+#div4 {
+    background-image: url("images/SW_droids.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ }
+#div5 {
+    background-image: url("images/SW_death_star.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ }
+#div6 {
+    background-image: url("images/SW_vehicles.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ }
+
+
+
+div a {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
 }
 

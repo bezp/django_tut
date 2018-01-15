@@ -1,22 +1,29 @@
 
 {% load static %}
-<!doctype html>
 <html>
     <head>
         <title>StarWars API</title>
         <link rel="stylesheet" type="text/css" href="{% static 'swapi/main.css' %}" />
     </head>
     <body>
-        <ul>
-            <li><a href="{% url 'swapi:films' %}">Films</a></li>
-            <li><a href="{% url 'swapi:people' %}">People</a></li>
-            <li><a href="{% url 'swapi:planets' %}">Planets</a></li>
-            <li><a href="{% url 'swapi:species' %}">Species</a></li>
-            <li><a href="{% url 'swapi:starships' %}">Starships</a></li>
-            <li><a href="{% url 'swapi:vehicles' %}">Vehicles</a></li>
-        </ul>
-
-
+                <div id="div1">
+                    <a href="{% url 'swapi:films' %}">Films</a>
+                </div>
+                <div id="div2">
+                    <a href="{% url 'swapi:people' %}">People</a>
+                </div>
+                <div id="div3">
+                    <a href="{% url 'swapi:planets' %}">Planets</a>
+                </div>
+                <div id="div4">
+                    <a href="{% url 'swapi:species' %}">Species</a>
+                </div>
+                <div id="div5">
+                    <a href="{% url 'swapi:starships' %}">Starships</a>
+                </div>
+                <div id="div6">
+                    <a href="{% url 'swapi:vehicles' %}">Vehicles</a>
+                </div>
     </body>
 </html>
 
