@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^vehicles/$', views.vehicles, name='vehicles'),
     url(r'^starships/$', views.starships, name='starships'),
     url(r'^url/$', views.xurl, name='xurl'),
+    url(r'^xtest/$', views.xtest, name='xtest'),
 ]
 
 # # ex: /polls/5/

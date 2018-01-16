@@ -122,7 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
+STATICFILES_DIRS = (                    #static files that are not tied to a particular app
     os.path.join(BASE_DIR, 'assets'), #added so layout.html can load static files... 'BASE_DIR - is just the
                                         #'mysite' base root stub and u need comma b/c its a tuple
 )

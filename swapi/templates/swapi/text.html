@@ -1,0 +1,42 @@
+{% load static %}
+
+
+<html>
+    <head>
+        <title>yuk</title>
+
+
+        <link rel="stylesheet" type="text/css" href="{% static 'swapi/text.css' %}" />
+    </head>
+    <body>
+    <a href="">asdasd</a>
+
+
+    <div id="titles"><div id="titlecontent">
+	<p>
+    {% for xlist in films %}
+    <p>({{ xlist.episode_id }}) {{ xlist.title }}</p>
+    <p>{{ xlist.opening_crawl }}</p>
+    <li>Director --- {{ xlist.director }}</li>
+    <li>Producer --- {{ xlist.producer }}</li>
+    <li>Release Date --- {{ xlist.release_date }}</li>
+    {% endfor %}
+    <br><br><br><br><br>
+    </p>
+
+
+    </div>
+    </div>
+
+
+
+
+    </body>
+</html>
+
+
+
+
+
+
+

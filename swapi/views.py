@@ -62,6 +62,13 @@ def films(request):
     ordered_list = sorted(x, key=lambda k: k['episode_id'])
     return render(request, 'swapi/films.html', {'films': ordered_list}) #films sent is a list of dict
 
+def xtest(request):
+    x = get_url_specific(0)
+    x = x['results']
+    ordered_list = sorted(x, key=lambda k: k['episode_id'])
+    return render(request, 'swapi/text.html', {'films': ordered_list})
+
+
 error = 'Please enter a VALID query'
 li_people = [('Luke Skywalker', 1), ('C-3PO', 2), ('R2-D2', 3), ('Darth Vader', 4), ('Leia Organa', 5),
              ('Owen Lars', 6), ('Beru Whitesun lars', 7), ('R5-D4', 8), ('Biggs Darklighter', 9),

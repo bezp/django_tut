@@ -4,11 +4,11 @@ a {
     text-align: center;
 }
 a:link {
-    color: hotpink;
+    color: yellow;
 }
 
 a:visited {
-    color: green;
+    color: yellow;
 }
 a:hover {
     color: red;
@@ -17,7 +17,7 @@ a:hover {
 html, body { height: 100%; padding: 0; margin: 0; }
 div { width: 33.33%; height: 50%; float: left; }
 #div1 {
-    background-image: url("images/star_wars_film4.jpg");
+    background-image: url("images/sw_ep4.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

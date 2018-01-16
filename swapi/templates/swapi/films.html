@@ -1,67 +1,35 @@
-{% extends "swapi/header_template.html" %}
 
-{% block title %}Films{% endblock %}
-
+{% load static %}
 
 
 
+    <head>
+        <title>Films</title>
 
-{% block content %}
 
-{% for xlist in films %}
-<div>
-    <li>{{ xlist.title }}</li>
-    <ul>{{ xlist.opening_crawl }}</ul>
-    <li>{{ xlist.episode_id }} episode_id</li>
-    <li>{{ xlist.director }} director</li>
-    <li>{{ xlist.producer }} producer</li>
-    <li>{{ xlist.release_date }} release_date</li>
-
-<p>x</p><p>x</p>
-</div>
-{% endfor %}
-
-{% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% static 'swapi/films.css' %}" />
+    </head>
+    <body>
+    <a href="{% url 'swapi:main' %}">Home</a>
 
 
 
 
+    <div id="titles">
+    <div id="titlecontent">
+        <p>
+            {% for xlist in films %}
+            <p style="text-align: center;">({{ xlist.episode_id }}) {{ xlist.title }}</p>
+            <p>{{ xlist.opening_crawl }}</p>
+            <p>Director --- {{ xlist.director }}</p>
+            <p>Producer --- {{ xlist.producer }}</p>
+            <p>Release Date --- {{ xlist.release_date }}</p>
+            <br><br><br>
+            {% endfor %}
+            Bezalel Pan =]
+        </p>
+    </div>
+    </div>
 
 
-
-
-
-
-
-    <!--<li>{{ xlist.species }} species</li>
-        {% for x in xlist.species %}
-        <p>{{ x }}~~~~~~~~~~~species</p>
-        {% endfor %}
-    <li>{{ xlist.starships }} starships</li>
-
-        {% for x in xlist.starships %}
-        <p>{{ x }}~~~~~~~~~~~starships</p>
-        {% endfor %}
-
-    <li>{{ xlist.vehicles }} vehicles</li>
-
-        {% for x in xlist.vehicles %}
-        <p>{{ x }}~~~~~~~~~~~vehicles</p>
-        {% endfor %}
-
-    <li>{{ xlist.characters }} characters</li>
-
-        {% for x in xlist.characters %}
-        <p>{{ x }}~~~~~~~~~~~characters</p>
-        {% endfor %}
-
-
-    <li>{{ xlist.planets }} planets</li>
-planets
-        {% if xlist.planets %}
-        {% for x in xlist.planets %}~~~planets
-        <p>{{ x }}</p>
-        {% endfor %}
-        {% else %}
-        <p>none</p>
-        {% endif %}-->
+    </body>
