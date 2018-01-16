@@ -3,6 +3,7 @@
 a {
     text-align: center;
 }
+
 a:link {
     color: yellow;
 }
@@ -52,8 +53,6 @@ div { width: 33.33%; height: 50%; float: left; }
     background-position: center;
     background-size: cover;
  }
-
-
 
 div a {
     text-align: center;

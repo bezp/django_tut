@@ -2,7 +2,6 @@ from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 import urllib3
 import certifi
 import json
-from django.core.urlresolvers import reverse
 
 
 def get_url_specific(value, number=None):
@@ -27,11 +26,10 @@ def get_url_specific(value, number=None):
         return x
 
 
-def url_convert(string): #convert '+' to a ' 'space, etc... for url values
+def url_convert(string):
     edit = string
     edit = edit.replace('+', ' ')
     edit = edit.replace('%27', "'")
-    # edit = edit.replace('%2D', "-")
     return edit
 
 
@@ -45,15 +43,8 @@ def search(request, tuple_list, num):
     return result
 
 
-def xurl(request):
-    result = search(request, li_people, 7)
-    return render(request, 'swapi/xurl.html', {'r':result, 'error':error})
-
-
 def main(request):
     return render(request, 'swapi/main.html')
-    # x = get_url_specific(6)
-    # return render(request, 'swapi/main.html', {'main': x})
 
 
 def films(request):
@@ -61,12 +52,6 @@ def films(request):
     x = x['results']
     ordered_list = sorted(x, key=lambda k: k['episode_id'])
     return render(request, 'swapi/films.html', {'films': ordered_list}) #films sent is a list of dict
-
-def xtest(request):
-    x = get_url_specific(0)
-    x = x['results']
-    ordered_list = sorted(x, key=lambda k: k['episode_id'])
-    return render(request, 'swapi/text.html', {'films': ordered_list})
 
 
 error = 'Please enter a VALID query'
@@ -90,7 +75,7 @@ li_people = [('Luke Skywalker', 1), ('C-3PO', 2), ('R2-D2', 3), ('Darth Vader', 
              ('Raymus Antilles', 81), ('Sly Moore', 82), ('Tion Medon', 83), ('Finn', 84), ('Rey', 85),
              ('Poe Dameron', 86), ('BB8', 87)]
 def people(request):
-    result = search(request, li_people, 7) #[('BB8', 87)]
+    result = search(request, li_people, 7)
     content = None
     first_item = None
     if result:

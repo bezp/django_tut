@@ -12,6 +12,6 @@ class AsciiForm(forms.ModelForm):
             'art': 'Message for da wae',
         }
         help_texts = {
-            'title': ('Some useful help text.'),
+            'title': ('(Username)'),
             'art': ('Message you want to send to the masses'),
         }
