@@ -3,38 +3,44 @@
 {% block title %}Vehicles{% endblock %}
 
 {% block content %}
+<br><br><br><br><br><br><br><br>
 
-Example (AT-AT)
-<form action="{% url 'swapi:vehicles' %}">
-    <input name="vehicles" value="">
-    <input type="submit">
-</form>
+<div class="container">
 
 
-{% if others %}
-    {% for x in others %}
-        {{ x.0 }}---
-    {% endfor %}
-{% endif %}
+    <div class="container-left">
+        {% if others %}
+        Other Options
+            {% for x in others %}
+                <p>{{ x.0 }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="container-right">
 
+        Example (AT-AT)
+        <form action="{% url 'swapi:vehicles' %}">
+            <input name="vehicles" value="">
+            <input type="submit">
+        </form>
 
-{% if first %}
-    <p>name---{{ first.name }}</p>
-    <p>model---{{ first.model }}</p>
-    <p>manufacturer---{{ first.manufacturer }}</p>
-    <p>cost_in_credits---{{ first.cost_in_credits }}</p>
-    <p>length---{{ first.length }}</p>
-    <p>max_atmosphering_speed---{{ first.max_atmosphering_speed }}</p>
-    <p>crew---{{ first.crew }}</p>
-    <p>passengers---{{ first.passengers }}</p>
-    <p>cargo_capacity---{{ first.cargo_capacity }}</p>
-    <p>consumables---{{ first.consumables }}</p>
-    <p>vehicle_class---{{ first.vehicle_class }}</p>
-{% else %}
-    {{ error }}
-{% endif %}
-
-
+        {% if first %}
+            <p>name---{{ first.name }}</p>
+            <p>model---{{ first.model }}</p>
+            <p>manufacturer---{{ first.manufacturer }}</p>
+            <p>cost_in_credits---{{ first.cost_in_credits }}</p>
+            <p>length---{{ first.length }}</p>
+            <p>max_atmosphering_speed---{{ first.max_atmosphering_speed }}</p>
+            <p>crew---{{ first.crew }}</p>
+            <p>passengers---{{ first.passengers }}</p>
+            <p>cargo_capacity---{{ first.cargo_capacity }}</p>
+            <p>consumables---{{ first.consumables }}</p>
+            <p>vehicle_class---{{ first.vehicle_class }}</p>
+        {% else %}
+            {{ error }}
+        {% endif %}
+    </div>
+</div>
 
 {% endblock %}
 

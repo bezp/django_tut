@@ -31,4 +31,27 @@ li a:hover:not(.active) {
 body {
     padding: 0;
     margin: 0;
+    background-image: url("images/sw_ship.JPG");
+    color: yellow;
 }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+.container-left {
+    width: 49%;
+    margin: 0 auto;
+    display: inline-block;
+    float: left;
+}
+.container-right {
+    width: 49%;
+    margin: 0 auto;
+    display: inline-block;
+    float: right;
+
+}
+
+
+

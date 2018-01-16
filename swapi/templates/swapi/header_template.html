@@ -5,7 +5,7 @@
         <title>{% block title %}{% endblock %}</title>
 
 
-        <link rel="stylesheet" type="text/css" href="{% static 'swapi/header.css' %}" /></link>
+        <link rel="stylesheet" type="text/css" href="{% static 'swapi/header.css' %}" />
     </head>
     <body>
         <ul>
@@ -18,7 +18,10 @@
             <li><a href="{% url 'swapi:vehicles' %}">Vehicles</a></li>
         </ul>
 
-        {% block content %}{% endblock %}
+        {% block content %}
+
+
+        {% endblock %}
 
     </body>
 </html>
