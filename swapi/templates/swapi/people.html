@@ -1,40 +1,37 @@
 {% extends "swapi/header_template.html" %}
 
 {% block title %}People{% endblock %}
-
 {% block content %}
+<br><br><br><br><br><br><br><br>
+<div class="container">
+    <div class="container-left">
+        {% if others %}
+            Other Options
+            {% for x in others %}
+                <p>{{ x.0 }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="container-right">
+        Example (Obi-Wan Kenobi)
+    <form action="{% url 'swapi:people' %}">
+        <input name="people" value="">
+        <input type="submit">
+    </form>
 
-Example (Obi-Wan Kenobi)
-<form action="{% url 'swapi:people' %}">
-    <input name="people" value="">
-    <input type="submit">
-</form>
-
-
-{% if others %}
-    {% for x in others %}
-        {{ x.0 }}---
-    {% endfor %}
-{% endif %}
-
-
-{% if first %}
-    <p>name---{{ first.name }}</p>
-    <p>height---{{ first.height }}</p>
-    <p>mass---{{ first.mass }}</p>
-    <p>hair_color---{{ first.hair_color }}</p>
-    <p>skin_color---{{ first.skin_color }}</p>
-    <p>eye_color---{{ first.eye_color }}</p>
-    <p>birth_year---{{ first.birth_year }}</p>
-    <p>gender---{{ first.gender }}</p>
-{% else %}
-    {{ error }}
-{% endif %}
-
-
-
+    {% if first %}
+        <p>name---{{ first.name }}</p>
+        <p>height---{{ first.height }}</p>
+        <p>mass---{{ first.mass }}</p>
+        <p>hair_color---{{ first.hair_color }}</p>
+        <p>skin_color---{{ first.skin_color }}</p>
+        <p>eye_color---{{ first.eye_color }}</p>
+        <p>birth_year---{{ first.birth_year }}</p>
+        <p>gender---{{ first.gender }}</p>
+    {% else %}
+        {{ error }}
+    {% endif %}
+    </div>
+</div>
 {% endblock %}
-
-
-
 

@@ -1,37 +1,37 @@
 {% extends "swapi/header_template.html" %}
 
 {% block title %}Planets{% endblock %}
-
 {% block content %}
-
-Example (Alderaan)
-<form action="{% url 'swapi:planets' %}">
-    <input name="planets" value="">
-    <input type="submit">
-</form>
-
-
-{% if others %}
-    {% for x in others %}
-        {{ x.0 }}---
-    {% endfor %}
-{% endif %}
-
-
-{% if first %}
-    <p>name---{{ first.name }}</p>
-    <p>rotation_period---{{ first.rotation_period }}</p>
-    <p>orbital_period---{{ first.orbital_period }}</p>
-    <p>diameter---{{ first.diameter }}</p>
-    <p>climate---{{ first.climate }}</p>
-    <p>gravity---{{ first.gravity }}</p>
-    <p>terrain---{{ first.terrain }}</p>
-    <p>surface_water---{{ first.surface_water }}</p>
-    <p>population---{{ first.population }}</p>
-{% else %}
-    {{ error }}
-{% endif %}
-
-
-
+<br><br><br><br><br><br><br><br>
+<div class="container">
+    <div class="container-left">
+        {% if others %}
+            Other Options
+            {% for x in others %}
+                <p>{{ x.0 }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="container-right">
+        Example (Alderaan)
+        <form action="{% url 'swapi:planets' %}">
+            <input name="planets" value="">
+            <input type="submit">
+        </form>
+        {% if first %}
+            <p>name---{{ first.name }}</p>
+            <p>rotation_period---{{ first.rotation_period }}</p>
+            <p>orbital_period---{{ first.orbital_period }}</p>
+            <p>diameter---{{ first.diameter }}</p>
+            <p>climate---{{ first.climate }}</p>
+            <p>gravity---{{ first.gravity }}</p>
+            <p>terrain---{{ first.terrain }}</p>
+            <p>surface_water---{{ first.surface_water }}</p>
+            <p>population---{{ first.population }}</p>
+        {% else %}
+            {{ error }}
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
+

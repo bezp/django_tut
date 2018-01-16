@@ -1,36 +1,39 @@
 {% extends "swapi/header_template.html" %}
 
 {% block title %}Species{% endblock %}
-
 {% block content %}
+<br><br><br><br><br><br><br><br>
+<div class="container">
+    <div class="container-left">
+        {% if others %}
+            Other Options
+            {% for x in others %}
+                <p>{{ x.0 }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="container-right">
+        Example (Twi'lek)
+        <form action="{% url 'swapi:species' %}">
+            <input name="species" value="">
+            <input type="submit">
+        </form>
 
-Example (Twi'lek)
-<form action="{% url 'swapi:species' %}">
-    <input name="species" value="">
-    <input type="submit">
-</form>
-
-
-{% if others %}
-    {% for x in others %}
-        {{ x.0 }}---
-    {% endfor %}
-{% endif %}
-
-
-{% if first %}
-    <p>name---{{ first.name }}</p>
-    <p>classification---{{ first.classification }}</p>
-    <p>designation---{{ first.designation }}</p>
-    <p>average_height---{{ first.average_height }}</p>
-    <p>skin_colors---{{ first.skin_colors }}</p>
-    <p>hair_colors---{{ first.hair_colors }}</p>
-    <p>eye_colors---{{ first.eye_colors }}</p>
-    <p>average_lifespan---{{ first.average_lifespan }}</p>
-    <p>language---{{ first.language }}</p>
-{% else %}
-    {{ error }}
-{% endif %}
-
-
+        {% if first %}
+            <p>name---{{ first.name }}</p>
+            <p>classification---{{ first.classification }}</p>
+            <p>designation---{{ first.designation }}</p>
+            <p>average_height---{{ first.average_height }}</p>
+            <p>skin_colors---{{ first.skin_colors }}</p>
+            <p>hair_colors---{{ first.hair_colors }}</p>
+            <p>eye_colors---{{ first.eye_colors }}</p>
+            <p>average_lifespan---{{ first.average_lifespan }}</p>
+            <p>language---{{ first.language }}</p>
+        {% else %}
+            {{ error }}
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
+
+

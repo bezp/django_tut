@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df8764-0d95-4c8f-8f27-b986d58facbc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swapi/static/swapi/header.css" afterPath="$PROJECT_DIR$/swapi/static/swapi/header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swapi/static/swapi/text.css" afterPath="$PROJECT_DIR$/swapi/static/swapi/text.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swapi/templates/swapi/header_template.html" afterPath="$PROJECT_DIR$/swapi/templates/swapi/header_template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swapi/templates/swapi/text.html" afterPath="$PROJECT_DIR$/swapi/templates/swapi/text.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swapi/templates/swapi/people.html" afterPath="$PROJECT_DIR$/swapi/templates/swapi/people.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swapi/templates/swapi/planets.html" afterPath="$PROJECT_DIR$/swapi/templates/swapi/planets.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swapi/templates/swapi/species.html" afterPath="$PROJECT_DIR$/swapi/templates/swapi/species.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swapi/templates/swapi/starships.html" afterPath="$PROJECT_DIR$/swapi/templates/swapi/starships.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swapi/templates/swapi/vehicles.html" afterPath="$PROJECT_DIR$/swapi/templates/swapi/vehicles.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,48 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="header_template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/header_template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="80" lean-forward="true" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swapi/static/swapi/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swapi/static/swapi/header.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vehicles.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/vehicles.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,6 +34,8 @@
       <find>udac</find>
       <find>mysite</find>
       <find>speci</find>
+      <find>star</find>
+      <find>vehicle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -118,10 +78,6 @@
         <option value="$PROJECT_DIR$/mysite/urls.py" />
         <option value="$PROJECT_DIR$/swapi/atest.py" />
         <option value="$PROJECT_DIR$/swapi/templates/swapi/xurl.html" />
-        <option value="$PROJECT_DIR$/swapi/templates/swapi/people.html" />
-        <option value="$PROJECT_DIR$/swapi/templates/swapi/planets.html" />
-        <option value="$PROJECT_DIR$/swapi/templates/swapi/species.html" />
-        <option value="$PROJECT_DIR$/swapi/templates/swapi/starships.html" />
         <option value="$PROJECT_DIR$/mysite/settings.py" />
         <option value="$PROJECT_DIR$/swapi/urls.py" />
         <option value="$PROJECT_DIR$/swapi/static/swapi/images/text.css" />
@@ -133,8 +89,12 @@
         <option value="$PROJECT_DIR$/swapi/templates/swapi/header_template.html" />
         <option value="$PROJECT_DIR$/swapi/static/swapi/text.css" />
         <option value="$PROJECT_DIR$/swapi/templates/swapi/text.html" />
-        <option value="$PROJECT_DIR$/swapi/templates/swapi/vehicles.html" />
         <option value="$PROJECT_DIR$/swapi/static/swapi/header.css" />
+        <option value="$PROJECT_DIR$/swapi/templates/swapi/vehicles.html" />
+        <option value="$PROJECT_DIR$/swapi/templates/swapi/starships.html" />
+        <option value="$PROJECT_DIR$/swapi/templates/swapi/species.html" />
+        <option value="$PROJECT_DIR$/swapi/templates/swapi/planets.html" />
+        <option value="$PROJECT_DIR$/swapi/templates/swapi/people.html" />
       </list>
     </option>
   </component>
@@ -322,9 +282,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -487,34 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/people.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/species.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/starships.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="37" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/planets.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -708,8 +639,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/vehicles.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="336">
+          <caret line="16" column="43" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/species.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/planets.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/starships.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="40" column="14" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="40" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swapi/templates/swapi/people.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
