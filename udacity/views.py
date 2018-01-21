@@ -14,7 +14,7 @@ IP_URL = 'http://api.hostip.info/?ip='
 def get_coords(ip):
     # ip = '4.2.2.2' # (denver) #hardcoded in... take out so there can be other inputs
     # ip = '192.206.151.131'
-    # ip = '217.209.91.160'
+    ip = '217.209.91.160'
     url = IP_URL + ip
     r = requests.get(url)
     content = r.text
@@ -22,10 +22,8 @@ def get_coords(ip):
         begin = content.find('gml:coordinates')
         end = content.find('gml:coordinates', begin+16)
         coords = content[begin+16:end-2]
-        # d = minidom.parseString(content)
-        # coords = d.getElementsByTagName("gml:coordinates")
-        if coords: # and coords[0].childNodes[0].nodeValue
-            lon, lat = coords.split(',') #coords[0].childNodes[0].nodeValue.split(',')
+        if coords:
+            lon, lat = coords.split(',')
             return lat, lon
 
 
