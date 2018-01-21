@@ -1,32 +1,5 @@
-from django.shortcuts import render, HttpResponseRedirect, HttpResponse
-import urllib3
-from urllib3 import ProxyManager
-import certifi
-import json
+from django.shortcuts import render
 import requests
-
-# def get_url_specific(value, number=None):
-#     urls = ['https://swapi.co/api/films/', 'https://swapi.co/api/people/',
-#             'https://swapi.co/api/planets/', 'https://swapi.co/api/species/',
-#             'https://swapi.co/api/starships/', 'https://swapi.co/api/vehicles/',
-#             'https://swapi.co/api/'
-#             ]
-#     url = urls[value]
-#     if number:
-#         url += str(number)
-#     try:
-#         # headers = urllib3.make_headers(proxy_basic_auth='myusername:mypassword')
-#         # http = urllib3.ProxyManager('https://myproxy.com:8080/', proxy_headers=headers)
-#         http = urllib3.PoolManager(
-#             cert_reqs='CERT_REQUIRED',
-#             ca_certs=certifi.where())
-#         r = http.request('GET', url)
-#         content = r.data
-#     except urllib3.exceptions.HTTPError:
-#         return
-#     if content:
-#         x = json.loads(content)
-#         return x
 
 
 def r_url(value, number=None):
@@ -41,7 +14,6 @@ def r_url(value, number=None):
     r = requests.get(url)
     rr = r.json()
     return rr
-
 
 
 def url_convert(string):
@@ -66,8 +38,6 @@ def main(request):
 
 
 def films(request):
-    # x = get_url_specific(0)
-    # x = x['results']
     x = r_url(0)
     x = x['results']
     ordered_list = sorted(x, key=lambda k: k['episode_id'])
@@ -101,7 +71,6 @@ def people(request):
     if result:
         first_item = result.pop(0)
     try:
-        # content = get_url_specific(1, first_item[1])
         content = r_url(1, first_item[1])
     except TypeError:
         pass
@@ -127,7 +96,6 @@ def planets(request):
     if result:
         first_item = result.pop(0)
     try:
-        # content = get_url_specific(2, first_item[1])
         content = r_url(2, first_item[1])
     except TypeError:
         pass
@@ -148,7 +116,6 @@ def species(request):
     if result:
         first_item = result.pop(0)
     try:
-        # content = get_url_specific(3, first_item[1])
         content = r_url(3, first_item[1])
     except TypeError:
         pass
@@ -168,7 +135,6 @@ def starships(request):
         first_item = result.pop(0)
     try:
         content = r_url(4, first_item[1])
-        # content = get_url_specific(4, first_item[1])
     except TypeError:
         pass
     return render(request, 'swapi/starships.html', {'first': content, 'others': result, 'error': error})
@@ -188,7 +154,6 @@ def vehicles(request):
         first_item = result.pop(0)
     try:
         content = r_url(5, first_item[1])
-        # content = get_url_specific(5, first_item[1])
     except TypeError:
         pass
     return render(request, 'swapi/vehicles.html', {'first': content, 'others': result, 'error': error})

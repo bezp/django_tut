@@ -1,33 +1,23 @@
-from django.shortcuts import render
+
 from .models import Art
-from django.contrib import messages
-from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from . import forms
-import urllib3
 from xml.dom import minidom
 from collections import namedtuple
-# Create your views here.
-import certifi
-
+import requests
 
 # funct to get coords of ppl submitting... hav an example ip  -- results in lat and lon
 IP_URL = 'http://api.hostip.info/?ip='
+
 def get_coords(ip):
     # ip = '4.2.2.2' # (denver) #hardcoded in... take out so there can be other inputs
     # ip = '192.206.151.131'
+    # ip = '217.209.91.160'
     url = IP_URL + ip
-    content = None  #start with nothing
-    try:
-        http = urllib3.PoolManager(
-                                        cert_reqs='CERT_REQUIRED',
-                                        ca_certs=certifi.where())
-        r = http.request('GET', url)
-        content = r.data
-    except urllib3.exceptions.HTTPError:
-        return
+    r = requests.get(url)
+    content = r.text
     if content:
         d = minidom.parseString(content)
         coords = d.getElementsByTagName("gml:coordinates")
@@ -36,17 +26,13 @@ def get_coords(ip):
             return lat, lon
 
 
-
-
 coord_points = []
 def ascii(request):
     xtry = Art.objects.filter(
         pk__gte=47
     )
     form = forms.AsciiForm()
-    # aaa = request.META.get('REMOTE_ADDR') #testing local machine ip
-    # aab = repr(get_coords(request.META.get('REMOTE_ADDR'))) #testing ip of user but we hardcoded one
-    xtry = list(xtry[::-1]) #so we dont loop over db more than once.. we just make a list we can go over when we ref xtry
+    xtry = list(xtry[::-1])
 
     #find ones w/ coords
     Point = namedtuple('Point', ['lat', 'lon']) # want to store coords as a namedtuple...
@@ -60,11 +46,9 @@ def ascii(request):
 
                 coord_points.append(Point(x, y))
             pass
-    #xcoord_points = filter(None, (x.coords for x in xtry))  #can replace top func???
 
     GMAPS_URL = 'https://maps.googleapis.com/maps/api/staticmap?size=700x370&sensor=false&'
     key = '&key=AIzaSyCftccJ8RWo6Rth9U4v8_F6oK8F8awk6Us'
-    #make the url link that will be used to make static pg w/ locations
     da_link = None  # start as None... if we hav coords, then we make 'da_link'
     da_link2 = None
     if coord_points:
@@ -90,7 +74,6 @@ def ascii(request):
             # regular save on model and return back to same page w/ blank form
             form.save()
             return HttpResponseRedirect(reverse('udacity:ascii'))
-    #send stuff to html page
     return render(request, 'udacity/udacity.html', {'form': form, 'xtry': xtry,# 'aaa': aaa, 'aab': aab,
                                                  'a': da_link#, 'coord_points': coord_points,
                                                   , 'b': da_link2
