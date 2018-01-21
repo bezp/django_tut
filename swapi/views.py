@@ -5,10 +5,10 @@ import json
 
 
 def get_url_specific(value, number=None):
-    urls = ['https://swapi.co/api/films/', 'https://swapi.co/api/people/',
-            'https://swapi.co/api/planets/', 'https://swapi.co/api/species/',
-            'https://swapi.co/api/starships/', 'https://swapi.co/api/vehicles/',
-            'https://swapi.co/api/'
+    urls = ['swapi.co/api/films/', 'swapi.co/api/people/',
+            'swapi.co/api/planets/', 'swapi.co/api/species/',
+            'swapi.co/api/starships/', 'swapi.co/api/vehicles/',
+            'swapi.co/api/'
             ]
     url = urls[value]
     if number:
