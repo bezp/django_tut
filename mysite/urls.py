@@ -18,6 +18,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 
 
 urlpatterns = [
@@ -28,6 +32,8 @@ urlpatterns = [
     url(r'^swapi/', include('swapi.urls')),
     #url(r'^course_admin/', include(admin.site.urls)), #added course_ to url route # removed cause only 1 admind and u just need to register the app
     url(r'^$', views.hello_world),
+    url(r'^s$', views.shello_world),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
+

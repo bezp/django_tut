@@ -20,16 +20,21 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+
+}
+a:hover {
+    color: yellow;
+}
+li a:hover:not(.active) {
+    background-color: ;
 }
 
-li a:hover:not(.active) {
-    background-color: red;
-}
 
 body {
     padding: 0;
     margin: 0;
-    background-image: url("images/sw_ship.JPG");
+    background: url(images/sw_ship.JPG) no-repeat center center fixed;
+    background-size: cover;
     color: yellow;
 }
 

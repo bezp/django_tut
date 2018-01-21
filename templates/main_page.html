@@ -1,8 +1,5 @@
-<!-- should be resume page (main page when going on site) -->
+
 {% load static from staticfiles %}
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,29 +7,46 @@
     <meta charset="UTF-8">
     <title>Bezalel</title>
 
-    <link rel="stylesheet" href="{% static 'css/main_layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main_layouts.css' %}">
+
 </head>
+
 <body>
-<div class="header-container">
 
+<div class="rotate-center" style="max-width:100%">
+    <img class="mySlides" src="{% static 'css/images/me_quote.jpg' %}" style="width:50%">
+    <img class="mySlides" src="{% static 'css/images/me1.jpg' %}" style="width:27%">
+    <img class="mySlides" src="{% static 'css/images/me2.jpg' %}" style="width:27%">
+    <img class="mySlides" src="{% static 'css/images/me3.jpg' %}" style="width:27%">
+    <img class="mySlides" src="{% static 'css/images/me4.jpg' %}" style="width:27%">
+    <img class="mySlides" src="{% static 'css/images/me5.jpg' %}" style="width:27%">
+    <img class="mySlides" src="{% static 'css/images/me6.jpg' %}" style="width:27%">
 </div>
 
-<div class="pic_and_quote">
-a
-</div>
 
-<div class="about_me">
 
-</div>
 
-<div class="finished_apps">
 
-</div>
 
-<div class="media_email">
 
-</div>
 
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+</script>
 </body>
 </html>
 
@@ -43,7 +57,25 @@ a
 
 
 
+    <!--<div class="header-container">-->
 
+    <!--</div>-->
+
+    <!--<div class="pic_and_quote">-->
+
+    <!--</div>-->
+
+    <!--<div class="about_me">-->
+
+    <!--</div>-->
+
+    <!--<div class="finished_apps">-->
+
+    <!--</div>-->
+
+    <!--<div class="media_email">-->
+
+    <!--</div>-->
 
 
 

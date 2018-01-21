@@ -1,0 +1,300 @@
+
+
+
+
+
+
+/* layout */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.navigation-bar {
+    width: 99.7%;  /* i'm assuming full width */
+    background-color: white; /* change to desired color */
+    position: fixed;
+    border-style: ridge;
+}
+nav a {
+    display: inline;
+    color: RGB(45,150,79);
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    float: right;
+}
+
+nav a:hover {
+    color: red;
+}
+p:hover {
+    color:red;
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+    grid-template-rows: 60px 92vh;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    background: white;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.item2 {
+    background: url(images/me_quote.jpg) no-repeat;
+    background-size: cover;
+
+    grid-column-start: 2;
+    grid-column-end: 5;
+
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.item4 {
+    background: url(images/uci_logo.JPG) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 60% 5%;
+}
+.item5 {
+    background: url(images/usussex_logo2.JPG) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 60% 9%;
+}
+
+
+
+
+.wrapper2 {
+    display: grid;
+    opacity: ;
+    grid-template-columns: 15vw 70vw 15vw;
+    grid-template-rows: 57px 80px 30px 400px 200px;
+    background-color: #D3D3D3;
+}
+.item6 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+    font-size: 400%;
+    color: RGB(45,150,79) /* django grene */
+}
+.item7 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    text-align: center;
+    color: RGB(45,150,79)
+}
+.item7 h3 {
+    color: black;
+}
+.item7 span:before {
+    content: '_________';
+    animation: animate infinite 12s;
+}
+@keyframes animate {
+    10%
+    {
+    content: '_________';
+    }
+    26%
+    {
+    content: 'Web Developer';
+    }
+    42%
+    {
+    content: 'Software Developer';
+    }
+    58%
+    {
+    content: 'Software Designer';
+    }
+    74%
+    {
+    content: 'Scholar';
+    }
+    90%
+    {
+    content: 'Foodie';
+    }
+}
+.item8 {
+    background: ;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+
+}
+
+.inside-wrapper {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.me-pic {
+  border-radius: 20%;
+  display: block;
+  margin: 0 auto;
+  border-style: double;
+  border-color: RGB(45,150,79);
+  border-width: 4px;
+
+
+}
+.inside-about {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    text-align: center;
+    padding: 50px 150px;
+    overflow: hidden;
+
+}
+.inside-about p {
+    text-align: left;
+}
+.inside-details {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    text-align: center;
+    padding: 50px;
+    overflow: hidden;
+
+}
+
+
+
+
+
+
+
+.wrapper3 {
+    display: grid;
+    opacity: ;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
+    grid-template-rows: 57px 80px 30px 400px 150px 200px 200px 100px;
+    background: #878787;
+}
+
+
+.item9 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+    font-size: 400%;
+    padding: 20px 0 0 0;
+    color: #1D6033;
+}
+.item10 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    text-align: center;
+}
+.item11 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    text-align: center;
+}
+.item11 h2 {
+    text-align: left;
+    color: #19522C;
+}
+.item11 h3 {
+    text-align: left;
+    margin: 15px 0 0 0;
+}
+.item11 h3:hover {
+    color: gold;
+}
+.item11 h4 {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+
+}
+.item11 h4:hover {
+    color: red;
+}
+.item12 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    text-align: center;
+}
+.item12 h2 {
+    text-align: left;
+    color: #19522C;
+}
+.item12 h3 {
+    text-align: left;
+    margin: 15px 0 0 0;
+}
+.item12 h3:hover {
+    color: gold;
+}
+.item12 h4 {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+.item12 h4:hover {
+    color: red;
+}
+.item13 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    text-align: center;
+}
+.item14 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    text-align: center;
+}
+.item15 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    text-align: center;
+}
+.item16 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    background: #606060;
+    text-align: center;
+}

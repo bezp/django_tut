@@ -1,0 +1,136 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bezalel</title>
+    <link rel="stylesheet" href="{% static 'css/xtest.css' %}">
+
+</head>
+
+<body>
+<nav class="navigation-bar">
+    <img class="logo" src="{% static 'css/images/logo_small.JPG' %}">
+    <a href="#home">Home</a>
+    <a href="#">Contact Me</a>
+    <a href="#profile">Profile</a>
+    <a href="#experience">Experiences</a>
+    <a href="#projects">Projects</a>
+</nav>
+
+<div class="wrapper" id="home">
+  <div class="item1" style="max-width:  98.8%;"></div>
+  <div class="item2"></div>
+  <div class="item4"></div>
+  <div class="item5"></div>
+</div>
+
+<div class="wrapper2" id="profile">
+    <div class="item6">
+        Profile
+        <hr>
+    </div>
+
+    <div class="item7">
+        <h3 style="display: inline;">I am a <span></span></h3>
+
+    </div>
+
+    <div class="item8" style="max-width:  98.8%;">
+
+        <div class="inside-wrapper">
+        <img class="me-pic" src="{% static 'css/images/face_photo_cropped.jpg' %}" alt="Avatar" style="width:150px">
+        </div>
+        <div class="inside-about">
+            <h1>About Me</h1>
+            <p>
+                I am a full stack developer with experience in Python, CSS, HTML, and a touch of Javascript.
+                I enjoy taking a pragmatic approach to problem solving and designing web architecture that is
+                both sensible and aesthetically pleasing. The creation of this site is achieved using Django with
+                SQLite and Git for version control.
+            </p>
+        </div>
+        <div class="inside-details">
+            <h1>Details</h1>
+            <h3>Name</h3>
+            <p>Bezalel Pan</p>
+            <h3>Age</h3>
+            <p>23 years</p>
+            <h3>Location</h3>
+            <p>Southern California</p>
+        </div>
+
+    </div>
+</div>
+
+<div id="experience"></div>
+
+<div class="wrapper3">
+    <div class="item9">
+        Experiences
+        <hr>
+
+    </div>
+    <div class="item10" style="max-width: 98%;">
+        <p>"If you are candid, you will discover that each experience in your life was absolutely necessary
+            in order to have gotten you to the next place, and the next, up until this very moment." -Wayne Dyer
+        </p>
+
+    </div>
+    <div class="item11">
+        <h2>Education</h2>
+        <h3>University of California, Irvine</h3>
+        <h4>2012-2016</h4>
+        <h3>University of Sussex</h3>
+        <h4>2014</h4>
+        <h2>Courses</h2>
+        <h4>Team Treehouse</h4>
+        <h4>Udacity</h4>
+        <h4>Springboard</h4>
+        <h4>Project Euler</h4>
+    </div>
+    <div class="item12">
+        <h2>Career</h2>
+        <h3>Molina Healthcare   -   Program Specialist</h3>
+        <h4>2016-2017</h4>
+        <h3>Pathnostics/Element 7   -   Lab Technician</h3>
+        <h4>2015</h4>
+    </div>
+
+    <div class="item13"  id="projects"><hr>
+        <h2><a href="#projects" style="font-family: Arial; font-size: 200%; color: white;">Projects</a></h2>
+
+    </div>
+    <div class="item14">
+        <h2><a href="{% url 'udacity:ascii' %}" style="font-family: Arial; color: white;">Quote Board</a></h2>
+        <span>
+            A non-serious message board for visitors to submit quotes/messages for other users.
+            This project is created to demonstrate how visitors can provide input to an existing database
+            using Django models/forms. The API from hostip.info is utilized to discover the ip address of a
+            visitor and is then used to chart a plot on a static image using Google Maps.
+        </span>
+    </div>
+    <div class="item15">
+        <h2><a href="{% url 'swapi:main' %}" style="font-family: Arial; color: white;">SWAPI</a></h2>
+        <span>
+            SWAPI is a programmatically-accessible data source from the Star Wars canon universe created by
+            Paul Hallett. My take on his application is to create a search engine that would return
+            information based on the search parameters and other possible queries if the query matched with similar
+            instances.
+        </span>
+    </div>
+    <div class="item16" style="max-width: 98.8%;">
+        <h2>Contact Me</h2>
+
+    </div>
+
+</div>
+
+
+
+
+
+</body>
+</html>
+

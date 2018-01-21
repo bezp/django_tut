@@ -1,0 +1,23 @@
+
+
+
+
+
+
+
+.mySlides {display:none;}
+
+.rotate-center {
+    display: block;
+    margin: 0 auto;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
+body{
+    background-color: white;
+}
+
