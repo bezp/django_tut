@@ -40,7 +40,9 @@ def get_coords(ip):
 
 coord_points = []
 def ascii(request):
-    xtry = Art.objects.all()
+    xtry = Art.objects.filter(
+        pk__gte=47
+    )
     form = forms.AsciiForm()
     # aaa = request.META.get('REMOTE_ADDR') #testing local machine ip
     # aab = repr(get_coords(request.META.get('REMOTE_ADDR'))) #testing ip of user but we hardcoded one
@@ -64,6 +66,7 @@ def ascii(request):
     key = '&key=AIzaSyCftccJ8RWo6Rth9U4v8_F6oK8F8awk6Us'
     #make the url link that will be used to make static pg w/ locations
     da_link = None  # start as None... if we hav coords, then we make 'da_link'
+    da_link2 = None
     if coord_points:
         markers = '&'.join('markers=%s,%s' % (p.lat, p.lon) for p in coord_points) # amount of markers in url link
         da_link = GMAPS_URL + markers + key

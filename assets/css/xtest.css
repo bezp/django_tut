@@ -279,15 +279,15 @@ p:hover {
 .item14 {
     grid-column-start: 2;
     grid-column-end: 4;
-    grid-row-start: 6;
-    grid-row-end: 7;
+    grid-row-start: 7;
+    grid-row-end: 8;
     text-align: center;
 }
 .item15 {
     grid-column-start: 2;
     grid-column-end: 4;
-    grid-row-start: 7;
-    grid-row-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 7;
     text-align: center;
 }
 .item16 {
