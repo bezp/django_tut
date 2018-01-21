@@ -24,8 +24,8 @@ def get_coords(ip):
         coords = content[begin+16:end-2]
         # d = minidom.parseString(content)
         # coords = d.getElementsByTagName("gml:coordinates")
-        if coords and coords[0].childNodes[0].nodeValue:
-            lon, lat = coords[0].childNodes[0].nodeValue.split(',')
+        if coords: # and coords[0].childNodes[0].nodeValue
+            lon, lat = coords.split(',') #coords[0].childNodes[0].nodeValue.split(',')
             return lat, lon
 
 
