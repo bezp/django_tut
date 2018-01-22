@@ -9,22 +9,20 @@ from collections import namedtuple
 import requests
 
 # funct to get coords of ppl submitting... hav an example ip  -- results in lat and lon
-IP_URL = 'http://api.hostip.info/?ip='
 
-def get_coords(ip):
-    # ip = '4.2.2.2' # (denver) #hardcoded in... take out so there can be other inputs
-    # ip = '192.206.151.131'
-    ip = '217.209.91.160'
-    url = IP_URL + ip
+geo_url = 'http://freegeoip.net/json/'
+def freegeoip(ip):
+    url = geo_url + ip
     r = requests.get(url)
     content = r.text
     if content:
-        begin = content.find('gml:coordinates')
-        end = content.find('gml:coordinates', begin+16)
-        coords = content[begin+16:end-2]
-        if coords:
-            lon, lat = coords.split(',')
-            return lat, lon
+        xlat = content.find('latitude')
+        xxlat = content.find(',', xlat)
+        lat = content[xlat+10:xxlat]
+        xlong = content.find('longitude')
+        xxlong = content.find(',', xlong)
+        long = content[xlong+11:xxlong]
+        return lat, long
 
 
 coord_points = []
@@ -66,7 +64,7 @@ def ascii(request):
         form = forms.AsciiForm(request.POST)
         if form.is_valid():
             # lookup users coords from IP
-            coords = get_coords(request.META.get('REMOTE_ADDR'))  #get ip using funct and saviing it further down
+            coords = freegeoip(request.META.get('REMOTE_ADDR'))  #get ip using funct and saviing it further down
             #if we get it, add to art model
             if coords:
                 x = form.save(commit=False)
