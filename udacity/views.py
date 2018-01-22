@@ -64,7 +64,7 @@ def ascii(request):
         form = forms.AsciiForm(request.POST)
         if form.is_valid():
             # lookup users coords from IP
-            coords = freegeoip(request.META.get('REMOTE_ADDR'))  #get ip using funct and saviing it further down
+            coords = freegeoip(request.META.get('HTTP_X_FORWARDED_FOR'))  #get ip using funct and saviing it further down
             #if we get it, add to art model
             if coords:
                 x = form.save(commit=False)
