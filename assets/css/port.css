@@ -1,0 +1,62 @@
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: black url("images/mac_logo1.png") no-repeat;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+
+}
+
+
+.op-nav {
+    background: rgba(255, 255, 255, 0) !important;
+    border: none !important;
+}
+.navbar-nav>li>a {
+    color: red !important;
+}
+.navbar-nav {
+    float: right !important;
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 20% 5% 50% 25%;
+    grid-template-rows: 70px 500px;
+}
+.item1 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    border: solid red 1px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    overflow-x: hidden;
+    padding: 20px 10px 0 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+*/
+
+
+

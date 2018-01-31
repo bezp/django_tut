@@ -34,6 +34,7 @@ urlpatterns = [
     #url(r'^course_admin/', include(admin.site.urls)), #added course_ to url route # removed cause only 1 admind and u just need to register the app
     url(r'^s$', views.hello_world),
     url(r'^$', views.shello_world),
+    url(r'^prev$', views.port_prev),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
