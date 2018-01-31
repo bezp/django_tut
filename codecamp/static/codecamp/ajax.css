@@ -1,0 +1,30 @@
+
+
+
+
+
+
+/*
+
+* {
+    border-style: solid;
+    border-color: red;
+}
+
+
+*/
+
+
+.container {
+    border-style: solid;
+    text-align: center;
+}
+
+
+.quote-box {
+        border-style: dashed;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
