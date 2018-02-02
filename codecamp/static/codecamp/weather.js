@@ -8,19 +8,11 @@ var latitude;
 var longitude;
 
 var weatherMain;
-var weatherDescription;
 var weatherIcon;
 
 var mainTemp;
-var mainPressure;
 var mainHumidity;
-var mainTempMin;
-var mainTempMax;
-var mainSeaLevel;
-var mainGroundLevel;
 
-var windSpeed;
-var windDegree;
 
 
 
@@ -29,9 +21,6 @@ var windDegree;
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
-    $("#data").html("latitude: " + latitude + "<br>longitude: " + longitude);
-
-
     if (latitude && longitude) {
         $.ajax({
             url:'https://fcc-weather-api.glitch.me//api/current?lon=' + longitude + '&lat=' + latitude,
@@ -39,30 +28,28 @@ var windDegree;
 //            jsonp: 'jsonp',
             success: function(response) {
                 weatherMain = response.weather[0].main;
-                weatherDescription = response.weather[0].description;
                 weatherIcon = response.weather[0].icon;
                 mainTemp = response.main.temp;
-                mainPressure = response.main.pressure;
                 mainHumidity = response.main.humidity;
-                mainTempMin = response.main.temp_min;
-                mainTempMax = response.main.temp_max;
 
-                $("#data2").html("weatherMain: " + weatherMain + "<br>weatherDescription: " + weatherDescription);
-                $("#data3").html("weatherIcon: <img src='" + weatherIcon + "alt='icon_pic'><br>mainTemp: " + mainTemp);
-                $("#data4").html("mainPressure: " + mainPressure + "<br>mainHumidity: " + mainHumidity +'%');
-                $("#data5").html("mainTempMin: " + mainTempMin + "<br>mainTempMax: " + mainTempMax);
-
+                $("#data2").html(weatherMain);
+                    if (weatherIcon) {
+                        $("#weatherIcon").html("<img src='" + weatherIcon + "' alt=icon_pic'>");
+                    } else {
+                        $("#weatherIcon").html("");
+                    }
+                $("#data3").html('<br>Humidity: ' + mainHumidity +'%');
+                $("#tempConvert").html(mainTemp.toFixed(0) + ' °C');
                 $(".change-temp").bind('click', function() {
-                    var celTemp = mainTemp;
-                    var farTemp = celTemp * 9/5 + 32;
-                    $("#tempFar").html(farTemp);
-                    $("#tempCel").html(celTemp);
-                    $("#switchTemppp").html($("#switchTemppp").html() == celTemp ? farTemp : celTemp);
+                    var celTemp = mainTemp.toFixed(0);
+                    var farTemp = (celTemp * 9/5 + 32).toFixed(0);  // tofixed = 0 decimal points
+                    $("#tempConvert").html($("#tempConvert").html() == farTemp ? celTemp : farTemp);
+                    $("#tempConvertCF").html($("#tempConvertCF").html() == '°F' ? '°C' : '°F');
                 });
             }
         });
     }
-    
+
 
     if (longitude && latitude) {
         $.ajax({
@@ -75,8 +62,8 @@ var windDegree;
 //                console.log(response.results[0].address_components[3].long_name);
 //                var y = JSON.stringify(response);
 //                var yy = JSON.parse(y);
-                $("#data55").html(response.results[0].address_components[3].long_name);
-                $("#data555").html(response.results[0].address_components[5].long_name);
+                $("#dataCity").html(response.results[0].address_components[3].long_name);
+                $("#dataCountry").html(response.results[0].address_components[5].long_name);
             },
         });
     }

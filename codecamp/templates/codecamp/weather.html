@@ -4,73 +4,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>weather shower thing</title>
+    <title>Weather Show-er Thinge</title>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 
     <script type="text/javascript" src="{% static 'codecamp/weather.js' %}"></script>
-
+<style>
+body  {
+background: -moz-linear-gradient(-45deg, rgba(30,87,153,1) 0%, rgba(89,148,202,1) 62%, rgba(95,154,207,0.7) 68%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+</style>
 </head>
 
 
 <body>
-<div id = "data1">
-  <h4>You are hereherehereherehere:data1</h4>
-</div>
-<div id = "data2">
-  <h4>You are hereherehereherehere:data2</h4>
-</div>
-<div id = "data3">
-  <h4>You are hereherehereherehere:data3</h4>
-</div>
-<div id = "data4">
-  <h4>You are hereherehereherehere:data4</h4>
-</div>
-<div id = "data5">
-  <h4>You are hereherehereherehere:data5</h4>
-</div>
 
-<div id = "data55">
-  <h4>You are :data5data5data5data5data5data5data5data5</h4>
-</div>
-<div id = "data555">
-  <h4>You are :data5data5data5data5data5data5data5data5</h4>
-</div>
+
 
 <br><br><br>
-<div id = "data">
-  <h4>You are here:</h4>
 
-</div>
 
 <div class="container-fluid">
   <div class = "row text-center">
-    <h2 class="location">h2 header</h2>
+        <div style="display: inline;">
+          <h4 id = "dataCity" style="display: inline;">City </h4>
+          <p style="display: inline;">, &nbsp;</p>
+          <h4 id = "dataCountry" style="display: inline;">Country</h4>
+        </div>
+        <hr>
   </div>
   <div class = "row text-center">
-    <div class = "col-md-12 well message">
-      The message will go here
+    <div class = "col-md-12 well message"
+         style="
+background: -moz-linear-gradient(-45deg, rgba(6,109,171,1) 4%, rgba(6,109,171,1) 4%, rgba(6,109,171,1) 18%,
+rgba(138,187,215,1) 31%, rgba(6,109,171,1) 84%, rgba(197,222,234,1) 89%, rgba(197,222,234,1) 90%, rgba(197,222,234,1) 90%);
+ /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, rgba(6,109,171,1) 4%,rgba(6,109,171,1) 4%,rgba(6,109,171,1)
+18%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 84%,rgba(197,222,234,1) 89%,rgba(197,222,234,1) 90%,rgba(197,222,234,1) 90%);
+ /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, rgba(6,109,171,1) 4%,rgba(6,109,171,1) 4%,rgba(6,109,171,1) 18%,rgba(138,187,215,1)
+31%,rgba(6,109,171,1) 84%,rgba(197,222,234,1) 89%,rgba(197,222,234,1) 90%,rgba(197,222,234,1) 90%);
+ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+">
+
+
+
+
+        <div id = "switchTemp">
+          <h4 id = "tempConvert" style="display: inline;"></h4>
+          <h4 id = "tempConvertCF" style="display: inline;"></h4>
+        </div>
+        <button class="change-temp">Convert C/F</button>
+        <div id = "data3">
+          <h4>Humidity:</h4>
+        </div>
+        <div id = "data2">
+          <h4>weatherMain</h4>
+        </div>
+        <div id = "weatherIcon">
+          <h4>weatherIcon</h4>
+        </div>
+
+
     </div>
   </div>
 </div>
 
-<button class="change-temp">asd</button>
-<div id = "tempFar">
-  <h4>tempFar</h4>
-</div>
-<div id = "tempCel">
-  <h4>tempCel</h4>
-</div>
-<div id = "switchTemp">
-  <h4 id = "switchTemppp">switchTempswitchTempswitchTemp</h4>
-</div>
-<select id="ddlViewBy">
-  <option value="1">test1</option>
-  <option value="2">test2</option>
-  <option value="3">test3</option>
-</select>
+
 
 </body>
 
