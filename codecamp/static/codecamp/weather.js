@@ -61,9 +61,8 @@ var windDegree;
                 });
             }
         });
-    } else {
-    $("#data1").html('none wtf');
     }
+    
 
     if (longitude && latitude) {
         $.ajax({
