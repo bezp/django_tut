@@ -8,5 +8,6 @@ urlpatterns = [
     # ex: /polls/
     url(r'^$', views.view, name='index'),
     url(r'^ajax/$', views.ajax, name='ajax'),
+    url(r'^weather/$', views.weather, name='weather'),
 ]
 

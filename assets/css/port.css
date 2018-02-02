@@ -29,22 +29,24 @@ background-size: cover;
 
 .wrapper {
     display: grid;
-    grid-template-columns: 20% 5% 50% 25%;
+    grid-template-columns: 20% 55% 25%;
     grid-template-rows: 70px 500px;
 }
 .item1 {
     grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-end: 3;
     border: solid red 1px;
     grid-row-start: 2;
     grid-row-end: 3;
     overflow-x: hidden;
-    padding: 20px 10px 0 30px;
+    padding: 20px;
 }
 
 
 
-
+h2:hover {
+    color:red ;
+}
 
 
 

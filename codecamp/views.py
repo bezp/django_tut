@@ -9,3 +9,7 @@ def view(request):
 
 def ajax(request):
     return render(request, 'codecamp/ajax.html')
+
+
+def weather(request):
+    return render(request, 'codecamp/weather.html')
