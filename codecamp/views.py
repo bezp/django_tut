@@ -13,3 +13,9 @@ def ajax(request):
 
 def weather(request):
     return render(request, 'codecamp/weather.html')
+
+def wiki(request):
+    return render(request, 'codecamp/wiki.html')
+
+def twitch(request):
+    return render(request, 'codecamp/twitch.html')
