@@ -2,28 +2,74 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Twitch Channels</title>
+  <meta charset="UTF-8">
+  <title>Twitch Channels</title>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+  <script type="text/javascript" src="{% static 'codecamp/twitch.js' %}"></script>
+  <style>
+    .logo {
+      height: 100px;
+      width: 100px;
+      background-color: powderblue;
+    }
 
-    <script type="text/javascript" src="{% static 'codecamp/twitch.js' %}"></script>
+    .container {
+      background-color: ;
+    }
 
+    .on {
+      border-style: ridge;
+      border-width: 7px;
+      border-color: #44d446;
+
+    }
+
+    .off {
+      border-style: ridge;
+      border-width: 7px;
+      border-color: grey;
+    }
+
+    div {
+      margin: 5px;
+    }
+
+    .selector,
+    p {
+      display: inline !important;
+      float: right;
+    }
+  </style>
 </head>
+
 <body>
 
+  <div class="container">
+    <div class="row" id="header">
+      <h1>Twitch Streams</h1>
+      <input type="text" id="textbox_id" placeholder="Streamer Lookup" />
+      <button id="a">Search</button>
+      <div class="">
+        <div class="selector" id="all">
+          <p class="activeAll">All</p>
+        </div>
+        <div class="selector" id="online">
+          <p class="activeOnline">Online</p>
+        </div>
+        <div class="selector" id="offline">
+          <p class="activeOffline">Offline</p>
+        </div>
+      </div>
+    </div>
+    <div id="display">
+    </div>
 
-
-
-
-
-
-
-
-
+  </div>
 
 </body>
 
