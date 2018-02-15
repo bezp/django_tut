@@ -1,0 +1,190 @@
+
+
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test for the test</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'codecamp/ideas2.css' %}" />
+    <script type="text/javascript" src="{% static 'codecamp/ideas2.js' %}"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="{% static 'codecamp/tagcanvas.min.js' %}" type="text/javascript"></script> <!--tagcanvas-->
+</head>
+<body>
+
+
+
+<div id="background-pic">
+    <!--navbar stuff-->
+    <div class="topnav" id="myTopnav">
+      <a href="#home">
+          <img class="img-responsive logo-img" id="greenHover" src="{% static 'css/images/bp_logo7_x.png' %}"
+          alt="logo letters 'BP' Bezalel Pan">
+      </a>
+      <a href="#Contact">Contact</a>
+      <a href="#Skills">Skills</a>
+      <a href="#Projects">Projects</a>
+      <a href="#About">About <hr></a>
+      <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <!--page content changes-->
+    <div id="pageContent" style="background-color:blue; background: rgba(5, 52, 81, 0.8); width:100% important;">
+        <!--<div class="item1" >-->
+            <!--&lt;!&ndash;<div class="item1First" style="width:50%;">&ndash;&gt;-->
+            <!--<sub><em><h2 class="body1" style="color:#498638;"></h2></em></sub>-->
+
+            <!--<sub><em><h2 class="head1" style="color:#498638; padding: 0 0 0 5%;"></h2></em></sub>-->
+            <!--<h1 style="padding: 0 0 0 5%;">About Me</h1>-->
+            <!--<sub><em><h2 class="head2" style="color:#498638; padding: 0 0 0 5%;"></h2></em></sub>-->
+
+            <!--<sub><em><h2 class="para1" style="color:#498638; padding: 0 0 0 5%;"></h2></em></sub>-->
+
+           <!--<p style="width:100%; font-size:22px; padding: 0 0 0 5%;">-->
+               <!--I am a full stack developer with experience in Python, CSS, HTML, and a touch of Javascript.-->
+               <!--I enjoy taking a pragmatic approach to problem solving and designing web architecture that is-->
+               <!--both sensible and aesthetically pleasing. The creation of this site is achieved using Django-->
+               <!--with SQLite and Git for version control.</p>-->
+            <!--<sub><em><h2 class="para2" style="color:#498638; padding: 0 0 0 5%;"></h2></em></sub>-->
+
+            <!--<br><br><br><br><br>-->
+            <!--<sub><em><h2 class="body2" style="color:#498638;"></h2></em></sub>-->
+        <!--</div>-->
+
+        <div class="item2">
+            <section class="cards">
+                <article>
+                    <a href="{% url 'swapi:main' %}">
+                        <img class="article-img" src="{% static 'css/images/Capture1.JPG' %}" alt=" " />
+                      <h1 class="article-title">
+                        SWAPI
+                      </h1>
+                    </a>
+                </article>
+                <article>
+                    <a href="{% url 'udacity:ascii' %}">
+                        <img class="article-img" src="{% static 'css/images/Capture2.JPG' %}" alt=" " />
+                      <h1 class="article-title">
+                        Quote Board
+                      </h1>
+                    </a>
+                </article>
+                <article>
+                    <a href="{% url 'cc:ajax' %}">
+                        <img class="article-img" src="{% static 'css/images/Capture3.JPG' %}" alt=" " />
+                      <h1 class="article-title">
+                        Inspiration
+                      </h1>
+                    </a>
+                </article>
+                <article>
+                    <a href="{% url 'cc:weather' %}">
+                        <img class="article-img" src="{% static 'css/images/Capture4.JPG' %}" alt=" " />
+                      <h1 class="article-title">
+                        Local Weather
+                      </h1>
+                    </a>
+                </article>
+                <article>
+                    <a href="{% url 'cc:wiki' %}">
+                        <img class="article-img" src="{% static 'css/images/Capture5.JPG' %}" alt=" " />
+                      <h1 class="article-title">
+                        Wikipedia
+                      </h1>
+                    </a>
+                </article>
+                <article>
+                    <a href="{% url 'cc:twitch' %}">
+                        <img class="article-img" src="{% static 'css/images/Capture6.JPG' %}" alt=" " />
+                      <h1 class="article-title">
+                        Twitch
+                      </h1>
+                    </a>
+                </article>
+            </section>
+        </div>   <!--end item2-->
+
+
+
+        <!--<div class="item3">-->
+            <!--<div style="display:inline;  text-align:center;">-->
+            <!--<sup><em><h2 class="head31" style="color:#498638; display:inline; "></h2></em></sup>-->
+            <!--<h1 style=" display:block-inline; ">Skills and Experience</h1>-->
+            <!--<sub><em><h2 class="head32" style="color:#498638; display:inline;"></h2></em></sub>-->
+            <!--</div>-->
+                <!--<div id="myCanvasContainers" >-->
+
+                    <!--<canvas width="600" height="600" id="myCanvas"> &lt;!&ndash; style="width: 60%; margin: 0 auto;"&ndash;&gt;-->
+                        <!--<p>Your browser does not support the canvas element</p>-->
+                    <!--</canvas>-->
+                        <!--<div id="educationSkill" style="">-->
+                            <!--<div style="display:inline;  text-align:center; float: ; ">-->
+                            <!--<sup><em><h2 class="body31" style="color:#498638; display:inline; "></h2></em></sup>-->
+                                <!--<h1 style=" display:block-inline; ">Education</h1>-->
+                                <!--<p>University of California, Irvine</p>-->
+                                <!--<p>University of Sussex</p>-->
+                                <!--<h1 style=" display:block-inline; ">Online Courses</h1>-->
+                                <!--<p>Udacity</p>-->
+                                <!--<p>Treehouse</p>-->
+                                <!--<p>Codecademy</p>-->
+                                <!--<p>FreeCodeCamp</p>-->
+                                <!--<p>MIT Opencourseware</p>-->
+                                <!--<p>HackerRank</p>-->
+                            <!--<sub><em><h2 class="body32" style="color:#498638; display:inline;"></h2></em></sub>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                <!--</div>-->
+                <!--<div id="tags">-->
+                    <!--<ul>-->
+                        <!--<li><a href="#">jQuery</a></li>-->
+                        <!--<li><a href="#">Bash shell</a></li>-->
+                        <!--<li><a href="#">Django</a></li>-->
+                        <!--<li><a href="#">HTML</a></li>-->
+                        <!--<li><a href="#">CSS</a></li>-->
+                        <!--<li><a href="#">JavaScript</a></li>-->
+                        <!--<li><a href="#">XML</a></li>-->
+                        <!--<li><a href="#">AJAX</a></li>-->
+                        <!--<li><a href="#">Bootstrap</a></li>-->
+                        <!--<li><a href="#">Git</a></li>-->
+                        <!--<li><a href="#">Python</a></li>-->
+                        <!--<li><a href="#">JSON</a></li>-->
+                        <!--<li><a href="#">Jupyter notebook</a></li>-->
+                        <!--<li><a href="#">wireframe</a></li>-->
+                        <!--<li><a href="#">sqlite3</a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+        <!--</div>  &lt;!&ndash;end item3&ndash;&gt;-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>  <!--page content div-->
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
+

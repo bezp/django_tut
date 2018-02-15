@@ -127,3 +127,12 @@ STATICFILES_DIRS = (                    #static files that are not tied to a par
     os.path.join(BASE_DIR, 'assets'), #added so layout.html can load static files... 'BASE_DIR - is just the
                                         #'mysite' base root stub and u need comma b/c its a tuple
 )
+
+
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
+DEFAULT_FROM_EMAIL = 'bezalelp@uci.edu'
+
+# noreply@yourwebsite.com

@@ -19,3 +19,12 @@ def wiki(request):
 
 def twitch(request):
     return render(request, 'codecamp/twitch.html')
+
+def ideas(request):
+    return render(request, 'codecamp/ideas.html')
+
+def ideas2(request):
+    return render(request, 'codecamp/ideas2.html')
+
+# def twitch(request):
+#     return render(request, 'codecamp/twitch.html')

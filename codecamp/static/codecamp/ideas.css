@@ -1,0 +1,36 @@
+
+
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  background: white url(" colorful_computer.png ") no-repeat;
+  overflow: auto;
+
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+}
+
+.op-nav {
+    background: rgba(255, 255, 255, 0) !important;
+    border: none !important;
+}
+
+
+
+
+/*
+*/
+
+
+.container-fluid {
+    padding-bottom: 20px;
+}
+

@@ -1,0 +1,101 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>creative</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'codecamp/ideas.css' %}" />
+
+  <script type="text/javascript" src="{% static 'codecamp/ideas.js' %}"></script>
+
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+    <!--<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>-->
+    <script src="{% static 'codecamp/tagcanvas.min.js' %}" type="text/javascript"></script> <!--tagcanvas-->
+
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top op-nav">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img style="width:40%;" class="img-responsive"
+                     src="{% static 'css/images/bp_logo7_x.png' %}"></a>
+        </div>
+        <ul class="nav navbar-nav" style="float:right;">
+          <li id = "getProfile"><a href="#">Profile</a></li>
+          <li id = "getProjects"><a href="#">Projects</a></li>
+          <li id = "getTechnology"><a href="#">Technology</a></li>
+          <li id = "getContact"><a href="#">Contact Me</a></li>
+
+        </ul>
+      </div>
+    </nav>
+
+
+<!--<div style="color:red ">-->
+    <!--<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>-->
+    <!--<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>-->
+    <!--<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>-->
+<!--asd-->
+
+<!--</div>-->
+
+
+
+
+ <!--style="color: green;"-->
+<div style="float:right; background-color:#;>
+
+    <div id="myCanvasContainer">
+      <canvas width="500" height="500" style="width: 100%;" id="myCanvas">
+        <p>Your browser does not support the canvas element</p>
+      </canvas>
+    </div>
+    <div id="tags">
+      <ul>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+        <li><a href="#">Chips</a></li>
+      </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
